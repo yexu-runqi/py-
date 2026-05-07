@@ -1,0 +1,18 @@
+{
+  "sites": [
+      {
+      "key": "七猫",
+      "name": "七猫",
+      "type": 3,
+      "api": "https://d.kstore.dev/download/16966/py/%E4%B8%83%E7%8C%AB%E7%9F%AD%E5%89%A7.py",
+      "playUrl": ""
+    },
+    {
+      "key": "金牌",
+      "name": "金牌",
+      "type": 3,
+      "api": "https://d.kstore.dev/download/16966/py/%E9%87%91%E7%89%8C.py",
+      "playUrl": ""
+    }
+  ]
+}
