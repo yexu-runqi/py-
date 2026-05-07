@@ -1,4 +1,9 @@
 {
+  "lib": [
+    "https://raw.githubusercontent.com/yexu-runqi/py-/main/js/drpy-core-fast.min.js",
+    "https://raw.githubusercontent.com/yexu-runqi/py-/main/js/drpy2-fast.min.js",
+    "https://raw.githubusercontent.com/yexu-runqi/py-/main/js/drpy2.min.js"
+  ],
   "sites": [
     {
       "key": "七猫",
@@ -8,10 +13,17 @@
       "playUrl": ""
     },
     {
+      "key": "QQ音乐[听]",
+      "name": "QQ音乐[听]",
+      "type": 3,
+      "api": "https://raw.githubusercontent.com/yexu-runqi/py-/main/js/drpy2-fast.min.js",
+      "ext": "https://raw.githubusercontent.com/yexu-runqi/py-/main/js/QQ%E9%9F%B3%E4%B9%90%5B%E5%90%AC%5D.js"
+    },
+    {
       "key": "瓜子",
       "name": "瓜子",
       "type": 3,
-      "api": "https://raw.githubusercontent.com/yexu-runqi/py-/main/js/drpy-core-fast.min.js",
+      "api": "https://raw.githubusercontent.com/yexu-runqi/py-/main/js/drpy2-fast.min.js",
       "ext": "https://raw.githubusercontent.com/yexu-runqi/py-/main/js/%E7%93%9C%E5%AD%90%E5%BD%B1%E8%A7%86%5B%E7%BD%91%5D.js"
     },
     {
