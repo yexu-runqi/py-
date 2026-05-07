@@ -1,34 +1,25 @@
 {
-  "site": [
+  "sites": [
     {
-      "key": "qimao",
+      "key": "七猫",
       "name": "七猫",
       "type": 3,
-      "api": "py",
-      "ext": "https://d.kstore.dev/download/16966/py/%E4%B8%83%E7%8C%AB%E7%9F%AD%E5%89%A7.py",
-      "search": 1,
-      "quickSearch": 1,
-      "filter": 1
+      "api": "https://d.kstore.dev/download/16966/py/%E4%B8%83%E7%8C%AB%E7%9F%AD%E5%89%A7.py",
+      "playUrl": ""
     },
     {
-      "key": "jinpai",
+      "key": "金牌",
       "name": "金牌",
       "type": 3,
-      "api": "py",
-      "ext": "https://d.kstore.dev/download/16966/py/%E9%87%91%E7%89%8C.py",
-      "search": 1,
-      "quickSearch": 1,
-      "filter": 1
+      "api": "https://金牌.py的完整直链",
+      "playUrl": ""
     },
     {
-      "key": "jieying",
+      "key": "界影视",
       "name": "界影视",
       "type": 3,
-      "api": "py",
-      "ext": "https://raw.githubusercontent.com/yexu-runqi/py-/main/py/界影视.py",
-      "search": 1,
-      "quickSearch": 1,
-      "filter": 1
+      "api": "https://raw.githubusercontent.com/yexu-runqi/py-/main/py/界影视.py",
+      "playUrl": ""
     }
   ]
 }
