@@ -11,8 +11,8 @@
       "key": "瓜子",
       "name": "瓜子",
       "type": 3,
-      "api": "https://github.com/yexu-runqi/py-/blob/main/js/drpy-core-fast.min.js",
-      "ext": "https://github.com/yexu-runqi/py-/blob/main/js/%E7%93%9C%E5%AD%90%E5%BD%B1%E8%A7%86%5B%E7%BD%91%5D.js"
+      "api": "https://raw.githubusercontent.com/yexu-runqi/py-/main/js/drpy-core-fast.min.js",
+      "ext": "https://raw.githubusercontent.com/yexu-runqi/py-/main/js/%E7%93%9C%E5%AD%90%E5%BD%B1%E8%A7%86%5B%E7%BD%91%5D.js"
     },
     {
       "key": "金牌",
