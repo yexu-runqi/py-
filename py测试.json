@@ -13,12 +13,12 @@
             "api": "./py/金牌.py"
         },
         {
-      "key": "博看听书[听]",
-      "name": "博看听书[听]",
-      "type": 3,
-      "api": "./js/drpy2.min.js",
-      "ext": "./js/博看听书[听].js"
-    },
+            "key": "博看听书[听]",
+            "name": "博看听书[听]",
+            "type": 3,
+            "api": "./js/drpy2.min.js",
+            "ext": "./js/博看听书[听].js"
+        },
         {
             "key": "QQ音乐[听]",
             "name": "QQ音乐[听]",
@@ -52,6 +52,14 @@
                 "日韩动漫",
                 "国产剧"
             ]
+        },
+        {
+            "key": "8x8x",
+            "name": "8x8x",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "jar": "./jar/xbpq.jar",
+            "ext": "./json/8x8x.json"
         },
         {
             "key": "kuwo",
