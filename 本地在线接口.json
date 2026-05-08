@@ -1,0 +1,100 @@
+{
+    "urls": [
+        {
+            "name": "小米",
+            "url": "https://gitee.com/smallmi1007/mimi/raw/master/mi.json"
+        },
+        {
+            "name": "py测试",
+            "url": "file://bdb/py测试/py测试.json"
+        },
+        {
+            "name": "东篱包",
+            "url": "file://影视/东篱/api.json"
+        },
+        {
+            "name": "道长自动",
+            "url": "file://影视/道长自动生成/drpy_dzlive/index.json"
+        },
+        {
+            "name": "福利点播",
+            "url": "https://gitee.com/pengdejiang998/bb/raw/master/vod_high_18.az"
+        },
+        {
+            "name": "福利不出就挂",
+            "url": "http://jk.xl523.cn/av.json"
+        },
+        {
+            "name": "爱优腾",
+            "url": "file://影视/官源/官源.json"
+        },
+        {
+            "name": "听歌接口",
+            "url": "https://d.kstore.dev/download/6651/api.json"
+        },
+        {
+            "name": "福利在线",
+            "url": "https://ghfast.top/https://raw.githubusercontent.com/yigedashu/xwck/refs/heads/main/20260103.json"
+        },
+        {
+            "name": "老张包",
+            "url": "file://lz/aa.json"
+        },
+        {
+            "name": "asset",
+            "url": "file://影视/asset/js/影视.json"
+        },
+        {
+            "name": "东篱在线",
+            "url": "https://16151.kstore.space"
+        },
+        {
+            "name": "道长本地",
+            "url": "file://影视/道长本地包/drpy_dzlive/index.json"
+        },
+        {
+            "name": "巧技",
+            "url": "http://tv.laohu.cool/tvbox.json"
+        },
+        {
+            "name": "豆丁",
+            "url": "https://121.aidianying.sbs/vip/2510/豆丁.json"
+        },
+        {
+            "name": "潇洒",
+            "url": "https://9877.kstore.space/AnotherD/api.json"
+        },
+        {
+            "name": "虎斑",
+            "url": "http://hb.小虎斑.site:25252/仅供测试"
+        },
+        {
+            "name": "网盘",
+            "url": "https://cnb.cool/zhyadc/YsBox/-/git/raw/main/index.json"
+        },
+        {
+            "name": "饭太硬",
+            "url": "http://www.饭太硬.com/tv"
+        },
+        {
+            "name": "南风",
+            "url": "https://github.catvod.com/https://raw.githubusercontent.com/yoursmile66/TVBox/main/XC.json"
+        },
+        {
+            "name": "OK",
+            "url": "http://ok321.top/tv"
+        },
+        {
+            "name": "肥猫",
+            "url": "http://肥猫.com/"
+        },
+        {
+            "name": "俊于",
+            "url": "http://home.jundie.top:81/top98.json"
+        },
+        {
+            "name": "香雅情",
+            "url": "https://gh-proxy.com/https://raw.githubusercontent.com/xyq254245/xyqonlinerule/main/XYQTVBox.json"
+        }
+    ]
+}
