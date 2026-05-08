@@ -13,12 +13,12 @@
             "api": "./py/金牌.py"
         },
         {
-      "key": "QQ音乐[听]",
-      "name": "QQ音乐[听]",
-      "type": 3,
-      "api": "./js/drpy2.min.js",
-      "ext": "./js/QQ音乐[听].js"
-    },
+            "key": "QQ音乐[听]",
+            "name": "QQ音乐[听]",
+            "type": 3,
+            "api": "./js/drpy2.min.js",
+            "ext": "./js/QQ音乐[听].js"
+        },
         {
             "key": "360zy",
             "name": "🌿360",
