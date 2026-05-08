@@ -1,10 +1,379 @@
 {
     "sites": [
         {
+            "key": "听歌⊕直播2",
+            "name": "听歌⊕直播2",
+            "type": 3,
+            "api": "./py/听歌⊕直播2.py"
+        },
+        {
             "key": "金牌",
             "name": "金牌",
             "type": 3,
             "api": "./py/金牌.py"
+        },
+        {
+            "key": "QQ音乐[听]",
+            "name": "QQ音乐[听]",
+            "type": 3,
+            "api": "./js/drpy2.min.js",
+            "ext": "./js/QQ音乐[听].js"
+        },
+        {
+            "key": "360zy",
+            "name": "🌿360",
+            "type": 1,
+            "api": "https://www.360zy.com/api.php/provide/vod/from/360zy",
+            "categories": [
+                "电影",
+                "连续剧",
+                "综艺",
+                "动漫",
+                "短剧",
+                "纪录片"
+            ]
+        },
+        {
+            "key": "yzzy",
+            "name": "🌿优质",
+            "type": 1,
+            "api": "https://api.yzzy-api.com/inc/apijson.php",
+            "categories": [
+                "电影",
+                "连续剧",
+                "综艺",
+                "动漫",
+                "短剧",
+                "纪录片"
+            ]
+        },
+        {
+            "key": "jisuzy",
+            "name": "🌿极速",
+            "type": 1,
+            "api": "https://jszyapi.com/api.php/provide/vod/from/jsm3u8",
+            "categories": [
+                "电影",
+                "连续剧",
+                "综艺",
+                "动漫",
+                "短剧",
+                "纪录片"
+            ]
+        },
+        {
+            "key": "mtzy",
+            "name": "🌿茅台",
+            "type": 1,
+            "api": "https://caiji.maotaizy.cc/api.php/provide/vod/from/mtm3u8",
+            "categories": [
+                "电影",
+                "连续剧",
+                "综艺",
+                "动漫",
+                "短剧",
+                "纪录片"
+            ]
+        },
+        {
+            "key": "qyzy",
+            "name": "🌿奇艺",
+            "type": 1,
+            "api": "https://iqiyizyapi.com/api.php/provide/vod/from/iqym3u8",
+            "categories": [
+                "电影",
+                "连续剧",
+                "综艺",
+                "动漫",
+                "短剧",
+                "纪录片"
+            ]
+        },
+        {
+            "key": "dytt",
+            "name": "🌿天堂",
+            "type": 1,
+            "api": "http://caiji.dyttzyapi.com/api.php/provide/vod/from/dyttm3u8",
+            "categories": [
+                "电影",
+                "连续剧",
+                "综艺",
+                "动漫",
+                "短剧",
+                "纪录片"
+            ]
+        },
+        {
+            "key": "hhzy",
+            "name": "🌿豪华",
+            "type": 1,
+            "api": "https://hhzyapi.com/api.php/provide/vod/from/hhm3u8",
+            "categories": [
+                "电影",
+                "连续剧",
+                "综艺",
+                "动漫",
+                "短剧",
+                "纪录片"
+            ]
+        },
+        {
+            "key": "ryzy",
+            "name": "🌿如意",
+            "type": 1,
+            "api": "https://cj.rycjapi.com/api.php/provide/vod/from/rym3u8",
+            "categories": [
+                "电影",
+                "连续剧",
+                "综艺",
+                "动漫",
+                "短剧",
+                "纪录片"
+            ]
+        },
+        {
+            "key": "wjzy",
+            "name": "🌿无尽",
+            "type": 1,
+            "api": "https://api.wujinapi.me/api.php/provide/vod/from/wjm3u8",
+            "categories": [
+                "电影",
+                "连续剧",
+                "综艺",
+                "动漫",
+                "短剧",
+                "纪录片"
+            ]
+        },
+        {
+            "key": "wlzy",
+            "name": "🌿卧龙",
+            "type": 1,
+            "api": "https://collect.wolongzyw.com/api.php/provide/vod/from/wolong",
+            "categories": [
+                "电影",
+                "连续剧",
+                "综艺",
+                "动漫",
+                "短剧",
+                "纪录片"
+            ]
+        },
+        {
+            "key": "hnzy",
+            "name": "🌿红牛",
+            "type": 1,
+            "api": "https://www.hongniuzy2.com/api.php/provide/vod/from/hnm3u8",
+            "categories": [
+                "电影",
+                "连续剧",
+                "综艺",
+                "动漫",
+                "短剧",
+                "纪录片"
+            ]
+        },
+        {
+            "key": "gszy",
+            "name": "🌿光速",
+            "type": 1,
+            "api": "https://api.guangsuapi.com/api.php/provide/vod/from/gsm3u8",
+            "categories": [
+                "电影",
+                "连续剧",
+                "综艺",
+                "动漫",
+                "短剧",
+                "纪录片"
+            ]
+        },
+        {
+            "key": "jyzy",
+            "name": "🌿金鹰",
+            "type": 1,
+            "api": "https://jyzyapi.com/provide/vod/from/jinyingm3u8",
+            "categories": [
+                "电影",
+                "连续剧",
+                "综艺",
+                "动漫",
+                "短剧",
+                "纪录片"
+            ]
+        },
+        {
+            "key": "hyzy",
+            "name": "🌿虎牙",
+            "type": 1,
+            "api": "https://www.huyaapi.com/api.php/provide/vod/from/hym3u8",
+            "categories": [
+                "电影",
+                "连续剧",
+                "综艺",
+                "动漫",
+                "短剧",
+                "纪录片"
+            ]
+        },
+        {
+            "key": "tpzy",
+            "name": "🌿淘片",
+            "type": 1,
+            "api": "https://taopianapi.com/cjapi/mc10/vod/json/m3u8.html"
+        },
+        {
+            "key": "yyzy",
+            "name": "🌿鸭鸭",
+            "type": 1,
+            "api": "https://cj.yayazy.net/api.php/provide/vod/from/yym3u8",
+            "categories": [
+                "电影",
+                "连续剧",
+                "综艺",
+                "动漫",
+                "短剧",
+                "纪录片"
+            ]
+        },
+        {
+            "key": "okzy",
+            "name": "🌿OK",
+            "type": 1,
+            "api": "http://api.okzyw.net/api.php/provide/vod/from/okm3u8",
+            "categories": [
+                "电影",
+                "连续剧",
+                "综艺",
+                "动漫",
+                "短剧",
+                "纪录片"
+            ]
+        },
+        {
+            "key": "lzzy",
+            "name": "🌿量子",
+            "type": 1,
+            "api": "http://cj.lziapi.com/api.php/provide/vod/from/lzm3u8",
+            "categories": [
+                "电影",
+                "连续剧",
+                "综艺",
+                "动漫",
+                "短剧",
+                "纪录片"
+            ]
+        },
+        {
+            "key": "ffzy",
+            "name": "🌿非凡",
+            "type": 1,
+            "api": "http://cj.ffzyapi.com/api.php/provide/vod/from/ffm3u8",
+            "categories": [
+                "电影",
+                "连续剧",
+                "综艺",
+                "动漫",
+                "短剧",
+                "纪录片"
+            ]
+        },
+        {
+            "key": "bfzy",
+            "name": "🌿暴风",
+            "type": 1,
+            "api": "https://bfzyapi.com/api.php/provide/vod/from/bfzym3u8",
+            "categories": [
+                "电影",
+                "连续剧",
+                "综艺",
+                "动漫",
+                "短剧",
+                "纪录片"
+            ]
+        },
+        {
+            "key": "tyzy",
+            "name": "🌿天涯",
+            "type": 1,
+            "api": "https://tyyszyapi.com/api.php/provide/vod/from/tym3u8",
+            "categories": [
+                "电影",
+                "连续剧",
+                "综艺",
+                "动漫",
+                "短剧",
+                "纪录片"
+            ]
+        },
+        {
+            "key": "snzy",
+            "name": "🌿索尼",
+            "type": 1,
+            "api": "https://suoniapi.com/api.php/provide/vod/from/snm3u8",
+            "categories": [
+                "电影",
+                "连续剧",
+                "综艺",
+                "动漫",
+                "短剧",
+                "纪录片"
+            ]
+        },
+        {
+            "key": "星空",
+            "name": "🍿星空┃4K",
+            "type": 3,
+            "searchable": 1,
+            "changeable": 1,
+            "api": "csp_AppGet",
+            "jar": "./jar/潇洒.jar",
+            "ext": {
+                "url": "https://xk9.xkgzs.xyz",
+                "dataKey": "106jkcdnkldzckjk",
+                "dataIv": "106jkcdnkldzckjk"
+            }
+        },
+        {
+            "key": "360采集",
+            "name": "360｜采集",
+            "type": 1,
+            "api": "https://360zy.com/api.php/provide/vod/",
+            "searchable": 1,
+            "changeable": 1,
+            "categories": [
+                "国产动漫",
+                "日韩动漫",
+                "国产剧"
+            ]
+        },
+        {
+            "key": "kuwo",
+            "name": "酷我｜音乐",
+            "type": 1,
+            "api": "https://xy.183933.xyz/php/kuwo.php/provide/vod",
+            "playUrl": "json:https://183933.xyz/xiaye.php?url=",
+            "searchable": 1,
+            "changeable": 1
+        },
+        {
+            "key": "localdb",
+            "name": "🗄️｜本地数据库",
+            "type": 3,
+            "api": "csp_LocalDB",
+            "searchable": 1,
+            "quickSearch": 1,
+            "changeable": 0,
+            "filterable": 1,
+            "jar": "./jar/dongli-spider.jar",
+            "ext": "./json/local_database_mapping.json"
+        },
+        {
+            "key": "csp_BinMarket",
+            "name": "OK┃环境市场",
+            "api": "csp_BinMarket",
+            "jar": "./jar/粉妹.jar",
+            "type": "3",
+            "ext": "./json/oklab2.json"
         },
         {
             "key": "资源管理",
@@ -12,19 +381,63 @@
             "type": 3,
             "api": "./py/资源管理.py"
         },
-               {
+        {
+            "key": "皮皮虾",
+            "name": "🦐皮皮虾",
+            "type": 3,
+            "api": "./py/皮皮虾.py",
+            "ext": "http://38.55.237.41:8762"
+        },
+        {
+            "key": "全球更新",
+            "name": "全球更新",
+            "type": 3,
+            "searchable": 0,
+            "changeable": 0,
+            "quickSearch": 0,
+            "filterable": 1,
+            "indexs": 1,
+            "api": "./js/全球更新.js"
+        },
+        {
+            "key": "csp_xBPQ_搞aa",
+            "name": "🔞X(Twitter)黑料",
+            "type": 3,
+            "api": "csp_XYQHiker",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 0,
+            "playerType": 2,
+            "jar": "./jar/xyq202503缝合.jar",
+            "ext": "./json/X(Twitter)黑料.json"
+        },
+        {
+            "key": "永乐视频",
+            "name": "永乐视频",
+            "type": 3,
+            "api": "./py/永乐视频.py"
+        },
+        {
             "key": "4webview",
             "name": "4webview",
             "type": 3,
             "api": "./py/4webview.py"
         },
         {
-            "key": "腾讯体育",
-            "name": "腾讯体育",
+            "key": "企鹅体育",
+            "name": "企鹅体育",
             "type": 3,
-            "api": "csp_XBPQ",
-            "ext": "./json/腾讯体育.json",
-            "jar": "./jar/xbpq.jar"
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "order_num": 0,
+            "api": "./py/企鹅体育.py"
+        },
+        {
+            "key": "新韩剧",
+            "name": "新韩剧",
+            "type": 3,
+            "api": "./py/新韩剧网.py"
         },
         {
             "key": "瓜子影视[网]",
@@ -42,10 +455,78 @@
             "jar": "./jar/xbpq.jar"
         },
         {
+            "key": "APP影院",
+            "name": "✨APP影院✨",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "jar": "./jar/xyqxbpq.jar",
+            "ext": {
+                "主页url": "https://www.appmovie.art",
+                "分类url": "https://www.appmovie.art/index.php/vod/type/id/{cateId}/page/{catePg}.html",
+                "分类ID": "https://www.appmovie.art/index.php/vod/show/id/&&.html",
+                "分类": "连续剧$2#电影$1#综艺$3#动漫$4#",
+                "数组": "p:.stui-vodlist__item",
+                "标题": "p:a->title",
+                "副标题": "p:span->text[含序号:2]",
+                "图片": "p:a->data-original",
+                "链接": "p:a->href",
+                "影片年份": "p:p[class*=\"text-muted hidden-xs\"] a->text",
+                "影片地区": "p:p[class*=\"text-muted hidden-xs\"] a->text",
+                "影片类型": "p:p[class*=\"text-muted\"] a->text",
+                "状态": "p:p[class*=\"text-muted\"] span->text",
+                "导演": "p:p[class*=\"text-muted\"] a->text",
+                "主演": "p:p[class*=\"text-muted\"] a->text",
+                "简介": "p:[class*=\"stui-content__desc col-pd clearfix\"]",
+                "搜索url": "https://www.appmovie.art/index.php/vod/search.html?wd={wd}",
+                "搜索数组": "p:li[class*=\"stui-vodlist__item\"] a",
+                "搜索标题": "p:a->title",
+                "搜索副标题": "p:span[class*=\"pic-text text-right\"]->text",
+                "搜索图片": "p:a->data-original",
+                "搜索链接": "p:a->href",
+                "线路数组": "p:div[class=\"t-ul\"] ul",
+                "线路标题": "p:h3->text",
+                "播放数组": "p:ul[class*=\"stui-content__playlist clearfix\"]",
+                "播放列表": "p:a",
+                "播放标题": "p:a->text",
+                "播放链接": "p:a->href"
+            }
+        },
+        {
+            "key": "yim",
+            "name": "秒播✨️无广",
+            "type": 3,
+            "api": "csp_Wwys",
+            "jar": "https://img2.gelonghui.com/library/959e6-f0a23ae5-25df-4079-8a35-00fd433101cc.png;md5;959e6f78c90fcfbf9309f05b226891c0",
+            "ext": "https://vip.wwgz.cn:5200"
+        },
+        {
+            "key": "多",
+            "name": "橘皮✨️蓝光",
+            "type": 3,
+            "api": "csp_Jpys",
+            "playerType": 1,
+            "jar": "https://ncstatic.clewm.net/rsrc/2026/0321/14/08ddeb54bc5e4c67b24f9ee0dfa280d2.png;md5;bb437516bc7187c2271e946909156c47",
+            "ext": "7lj763gg402i7942463j9j9jh8579590k3hjii5gi4i73l2k5l"
+        },
+        {
+            "key": "皮皮",
+            "name": "皮皮虾秒播",
+            "jar": "https://gitee.com/lzxw66/lzxw9/raw/master/bzc0316.png",
+            "type": 3,
+            "api": "https://52xiaobai.cn/ceshi/py/Applzxw.py",
+            "ext": "http://38.55.237.41:8762"
+        },
+        {
             "key": "枫叶4K",
             "name": "枫叶4K",
             "type": 3,
             "api": "./py/枫叶4K.py"
+        },
+        {
+            "key": "小说",
+            "name": "小说",
+            "type": 3,
+            "api": "./py/小说.py"
         },
         {
             "key": "TG视频",
@@ -69,6 +550,54 @@
                 "host": "https://guowaiju.com/",
                 "datakey": "7xv16h7qgkrs9b1p",
                 "dataIv": "7xv16h7qgkrs9b1p"
+            }
+        },
+        {
+            "key": "小编私藏版",
+            "name": "✨小编私藏版✨",
+            "type": 3,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "api": "csp_XBPQ",
+            "jar": "./jar/xyqxbpq.jar",
+            "style": {
+                "type": "rect",
+                "ratio": 1.33
+            },
+            "ext": {
+                "主页url": "https://1dpicd6h.sicang12.cc/力争上游/",
+                "分类url": "https://1dpicd6h.sicang12.cc/vodtype/{cateId}-{catePg}.html;;z",
+                "分类数组": "p:div[class*=\"top-menu\"] a",
+                "分类标题": "p:->text",
+                "分类ID": "/vodtype/&&.html",
+                "数组": "p:div[class*=\"models-videos__col\"]",
+                "标题": "p:p->text",
+                "副标题": "p:span->text+人观看+p:span->text[含序号:2]",
+                "图片": "p:img->data-src",
+                "链接": "p:->href[替换:voddetail>>vodplay#.html>>-1-1.html]",
+                "播放数组": "p:div[class*=\"videos-player-wrapper\"] script",
+                "播放链接": "var player_*url\":\"&&\""
+            }
+        },
+        {
+            "key": "csp_hanime",
+            "name": "Hanime┃无名氏┃T1",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "jar": "./jar/XBPQ2.jar",
+            "ext": {
+                "作者": "无名氏",
+                "站名": "hanime1",
+                "编码": "UTF-8",
+                "请求头": "User-Agent$MOBILE_UA",
+                "首页": "0",
+                "分类url": "https://hanime1.me/search?{cateId}&page={catePg}",
+                "分类": "最新上市$sort=最新上市#最新上傳$sort=最新上傳#泡麵番$genre=泡麵番#裏番$genre=裏番#角色扮演$genre=Cosplay#2D動畫$genre=2D動畫#Motion$genre=Motion+Anime#3DCG$genre=3DCG#AI生成$genre=AI生成#MMD$genre=MMD#2.5D动画$genre=2.5D",
+                "数组": "p:div.home-rows-videos-wrapper > a||p:div > .video-item-container",
+                "图片": "src=\"&&\"",
+                "链接": "href=\"&&\"",
+                "直接播放": "1"
             }
         },
         {
@@ -111,6 +640,16 @@
             "name": "🎻 听海ᶜᵃᵗ丨音乐",
             "type": 3,
             "api": "./js/tinghai.js",
+            "searchable": 1,
+            "quickSearch": 0,
+            "filterable": 1,
+            "类型": "音乐"
+        },
+        {
+            "key": "Cat_聚合音乐",
+            "name": "🎻 聚合ᶜᵃᵗ丨音乐",
+            "type": 3,
+            "api": "./js/聚合音乐[听].js",
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 1,
@@ -477,12 +1016,6 @@
             "name": "麻豆传媒",
             "type": 3,
             "api": "./py/麻豆传媒.py"
-        },
-        {
-            "key": "永乐视频",
-            "name": "永乐视频",
-            "type": 3,
-            "api": "./py/永乐视频.py"
         }
     ]
 }

@@ -53,13 +53,8 @@ class Spider(Spider):
 
     def categoryContent(self,tid,pg,filter,extend):
         result = {}
-        # 修复API接口，兼容空分类（全部）
-        if tid == "":
-            url = 'https://live.qq.com/api/live/vlist?page_size=60&page={0}'.format(pg)
-        else:
-            url = 'https://live.qq.com/api/live/vlist?page_size=60&shortName={0}&page={1}'.format(tid, pg)
-        # 统一用全局header，不额外传参，避免报错
-        rsp = self.fetch(url)
+        url = 'https://live.qq.com/api/live/vlist?page_size=60&shortName={0}&page={1}'.format(tid, pg)
+        rsp = self.fetch(url, headers=self.header)
         content = rsp.text
         jo = json.loads(content)
         videos = []
@@ -87,7 +82,7 @@ class Spider(Spider):
     def detailContent(self,array):
         aid = array[0]
         url = "https://m.live.qq.com/{0}".format(aid)
-        rsp = self.fetch(url)
+        rsp = self.fetch(url, headers=self.header)
         html = self.cleanText(rsp.text)
 
         if self.regStr(reg=r'\"show_status\":\"(\d)\"', src=html) == '1':
@@ -95,8 +90,6 @@ class Spider(Spider):
             pic = self.regStr(reg=r'\"room_src\":\"(.*?)\"', src=html)
             typeName = self.regStr(reg=r'\"game_name\":\"(.*?)\"', src=html)
             remark = self.regStr(reg=r'\"nickname\":\"(.*?)\"', src=html)
-            # 详情页只拿一次流，不缓存，避免过期
-            purl = self.regStr(r'\"hls_url\":\"(.*?)\"', html)
         else:
             return {}
 
@@ -113,8 +106,8 @@ class Spider(Spider):
             "vod_content": ''
         }
 
-        # 直接传有效流，不做二次处理
-        playUrl = '{0}${1}#'.format(typeName, purl)
+        # 只传房间ID，不缓存流
+        playUrl = '{0}${1}#'.format(typeName, aid)
         vod['vod_play_from'] = '企鹅体育'
         vod['vod_play_url'] = playUrl
 
@@ -128,15 +121,48 @@ class Spider(Spider):
 
     def playerContent(self,flag,id,vipFlags):
         result = {}
-        url = id
-        # 极简稳定请求头，不搞复杂校验，避免被拦截
+        room_id = id
+        
+        # 1. 强制实时请求，避免缓存
+        url = f"https://m.live.qq.com/{room_id}"
+        rsp = self.fetch(url, headers=self.header, timeout=10)
+        html = rsp.text
+        
+        # 2. 加强正则，兼容转义符/多种格式，抓真实流
+        purl = None
+        # 优先抓标准hls_url
+        match = re.search(r'\"hls_url\"\\?\":\\?\"(https?.*?m3u8.*?)\\?\"', html)
+        if match:
+            purl = match.group(1)
+        # 备用：抓playurl/stream_url
+        if not purl:
+            match = re.search(r'\"url\"\\?\":\\?\"(https?.*?m3u8.*?)\\?\"', html)
+            if match:
+                purl = match.group(1)
+        # 终极备用：抓全量m3u8
+        if not purl:
+            match = re.search(r'(https?://.*?\.m3u8\?.*?)[\"]', html)
+            if match:
+                purl = match.group(1)
+        
+        # 3. 解码转义符，拿到真实有效地址
+        if purl:
+            purl = urllib.parse.unquote(purl.replace("\\u0026", "&").replace("\\", ""))
+
+        # 4. 完整防盗链请求头，避免限流
         header = {
-            'Referer': 'https://m.live.qq.com/',
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 QQLive/6.8.0",
+            "Referer": f"https://m.live.qq.com/{room_id}",
+            "Origin": "https://m.live.qq.com",
+            "Accept": "*/*",
+            "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
+            "Cache-Control": "no-cache",
+            "Pragma": "no-cache"
         }
+
         result["parse"] = 1
-        result["playUrl"] = ''
-        result["url"] = url
+        result["playUrl"] = ""
+        result["url"] = purl
         result["header"] = header
         return result
 
@@ -145,10 +171,12 @@ class Spider(Spider):
         "filter": {}
     }
 
-    # 全局极简header，不搞复杂Cookie，避免接口报错
+    # 全局请求头，带Cookie模拟真实浏览器
     header = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-        "Referer": "https://live.qq.com/"
+        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 QQLive/6.8.0",
+        "Referer": "https://m.live.qq.com/",
+        "Origin": "https://m.live.qq.com",
+        "Cookie": "pgv_pvid=1234567890; pgv_info=ssid=s1234567890; ts_uid=1234567890123456; ts_refer=www.baidu.com/; ts_last=m.live.qq.com/"
     }
 
     def localProxy(self,param):

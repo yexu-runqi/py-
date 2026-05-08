@@ -1,0 +1,1552 @@
+{
+    "version": "1.1",
+    "groups": [
+        {
+            "id": "runtime",
+            "name": "运行环境",
+            "order": 1
+        }
+    ],
+    "lists": [
+        {
+            "name": "php",
+            "group": "runtime",
+            "version": "7.3.22",
+            "icon": "https://img.icons8.com/?size=240&id=121463&format=png&color=000000",
+            "auto_install": true,
+            "available": true,
+            "show": true,
+            "info": "爬虫运行时，支持多架构，适合低版本安卓和性能较差的设备，此运行时强制静默无感安装。\nsite配置：\n    {\n      \"key\": \"php甜圈短剧\",\n      \"name\": \"php | 甜圈短剧\",\n      \"api\": \"./vod/甜圈短剧.php\",\n      \"type\": \"3\"\n    }",
+            "binary_path": "bin/php",
+            "var_path": {
+                "LD_LIBRARY_PATH": "bin"
+            },
+            "commands": [
+                {
+                    "id": "server",
+                    "name": "🇨🇳轻量服务器",
+                    "description": "php内置服务器，可以跑任何php脚本。",
+                    "command": "php -S 127.0.0.1:8901 -t /storage/emulated/0/VodPlus/wwwroot/ -d error_log=/storage/emulated/0/VodPlus/logs/php_error.log",
+                    "auto_execute": true,
+                    "show_output": false,
+                    "variables": [
+                        {
+                            "key": "port",
+                            "name": "端口号",
+                            "type": "number",
+                            "default": "8901",
+                            "hint": "服务器监听端口",
+                            "required": true,
+                            "min": 1024,
+                            "max": 65535
+                        },
+                        {
+                            "key": "root_dir",
+                            "name": "根目录",
+                            "type": "directory",
+                            "default": "/storage/emulated/0/VodPlus/wwwroot/",
+                            "hint": "Web 服务器根目录",
+                            "required": true
+                        }
+                    ],
+                    "clicks": [
+                        {
+                            "title": "打开首页",
+                            "action": "webview",
+                            "style": "dialog",
+                            "value": "http://127.0.0.1:{port}"
+                        },
+                        {
+                            "title": "打开T4代理接口",
+                            "action": "webview",
+                            "style": "dialog",
+                            "value": "http://127.0.0.1:{port}/vod.php?key=站源key&ac=list"
+                        },
+                        {
+                            "title": "labeditor编辑器",
+                            "action": "webview",
+                            "style": "dialog",
+                            "value": "http://127.0.0.1:8901/Proxy/labeditor/index.html"
+                        },
+                        {
+                            "title": "游戏厅",
+                            "action": "webview",
+                            "style": "dialog",
+                            "value": "https://poki.com/zh"
+                        }
+                    ]
+                },
+                {
+                    "id": "自定义端口",
+                    "name": "🇨🇳自定义端口服务器",
+                    "description": "php内置服务器，可以跑任何php脚本。",
+                    "command": "php -S 127.0.0.1:{port} -t {root_dir} -d error_log=/storage/emulated/0/VodPlus/logs/EnvFiles/php二进制/错误.log",
+                    "auto_execute": false,
+                    "show_output": false,
+                    "variables": [
+                        {
+                            "key": "port",
+                            "name": "端口号",
+                            "type": "number",
+                            "default": "",
+                            "hint": "服务器监听端口",
+                            "required": true,
+                            "min": 1024,
+                            "max": 65535
+                        },
+                        {
+                            "key": "root_dir",
+                            "name": "根目录",
+                            "type": "directory",
+                            "default": "/storage/emulated/0/VodPlus",
+                            "hint": "Web 服务器根目录",
+                            "required": true
+                        }
+                    ],
+                    "clicks": [
+                        {
+                            "title": "打开首页",
+                            "action": "webview",
+                            "style": "dialog",
+                            "value": "http://127.0.0.1:{port}"
+                        },
+                        {
+                            "title": "打开T4代理接口",
+                            "action": "webview",
+                            "style": "dialog",
+                            "value": "http://127.0.0.1:{port}/vod.php?key=站源key&ac=list"
+                        }
+                    ]
+                },
+                {
+                    "id": "php_yikm",
+                    "name": "🇨🇳玩个小游戏",
+                    "description": "yikm小游戏，暂时这么将就玩：点击按键，再浏览器打开",
+                    "show_output": false,
+                    "clicks": [
+                        {
+                            "title": "俄罗斯方块",
+                            "action": "webview",
+                            "style": "dialog",
+                            "value": "https://v2fy.com/game/tetris/"
+                        },
+                        {
+                            "title": "斗地主人机",
+                            "style": "dialog",
+                            "action": "webview",
+                            "value": "https://www.haiwaiqipai.com/games/doudizhus/index.html"
+                        },
+                        {
+                            "title": "五子棋",
+                            "style": "dialog",
+                            "action": "webview",
+                            "value": "https://wuziqi.hongton.com"
+                        },
+                        {
+                            "title": "魂斗罗",
+                            "action": "webview",
+                            "style": "dialog",
+                            "value": "https://www.yikm.net/play?id=4137"
+                        }
+                    ]
+                },
+                {
+                    "id": "clear_all_logs_recursive",
+                    "name": "🇨🇳🧹 清理全部log日志（含子文件夹）",
+                    "description": "递归清除 /storage/emulated/0/VodPlus/ 目录下所有 .log 文件",
+                    "command": "find /storage/emulated/0/VodPlus/ -name \"*.log\" -type f -delete && echo '✅ 所有日志已清理' || echo '❌ 清理失败'",
+                    "auto_execute": true,
+                    "show_output": true
+                },
+                {
+                    "id": "delete_lab_commands",
+                    "name": "🇨🇳谨慎！！实验室缓存重置",
+                    "description": "⚠️谨慎！！⚠️清除实验室配置所有，是所有缓存文件，实现配置恢复出厂设置，⚠️所有设置将会重置！！！⚠️一般情况下只需使用按需手动清除lab缓存命令即可解决问题，⚠️如不能解决在用此命令！！",
+                    "command": "rm -rf /data/data/com.fongmi.vodplus/files/*lab_*/* && echo '✅ 屌炸天！缓存已灰飞烟灭' || echo '❌ 缓存本来就不存在，无需出手'",
+                    "auto_execute": false,
+                    "show_output": true
+                },
+                {
+                    "id": "web爬虫_php",
+                    "name": "🇨🇳web爬虫-PHP版",
+                    "description": "爬虫-web",
+                    "command": "php -S 127.0.0.1:{port} {script_path}",
+                    "auto_execute": false,
+                    "background": true,
+                    "show_output": false,
+                    "variables": [
+                        {
+                            "key": "port",
+                            "name": "端口号",
+                            "type": "number",
+                            "default": "3000",
+                            "hint": "服务器监听端口",
+                            "required": true,
+                            "min": 1024,
+                            "max": 65535
+                        },
+                        {
+                            "key": "script_path",
+                            "name": "脚本路径",
+                            "type": "file",
+                            "default": "/storage/emulated/0/VodPlus/Proxy/VodPlus-web/index.php",
+                            "hint": "选择php 文件",
+                            "required": true,
+                            "filter": "*"
+                        }
+                    ],
+                    "clicks": [
+                        {
+                            "title": "打开web链接",
+                            "style": "dialog",
+                            "action": "webview",
+                            "value": "http://127.0.0.1:3000"
+                        },
+                        {
+                            "title": "复制地址",
+                            "action": "copy",
+                            "value": "http://127.0.0.1:3000"
+                        },
+                        {
+                            "title": "测试web",
+                            "action": "webview",
+                            "style": "dialog",
+                            "value": "http://127.0.0.1:9978"
+                        },
+                        {
+                            "title": "老张web",
+                            "action": "webview",
+                            "style": "dialog",
+                            "value": "http://127.0.0.1:9978/file/VodPlus/sjbl.html"
+                        }
+                    ]
+                },
+                {
+                    "id": "t4proxy_php",
+                    "name": "🇨🇳T4代理服务器PHP版",
+                    "description": "代理服务器",
+                    "command": "php {script_path} --port {port}",
+                    "auto_execute": false,
+                    "background": true,
+                    "show_output": false,
+                    "variables": [
+                        {
+                            "key": "port",
+                            "name": "端口号",
+                            "type": "number",
+                            "default": "10999",
+                            "hint": "服务器监听端口",
+                            "required": true,
+                            "min": 1024,
+                            "max": 65535
+                        },
+                        {
+                            "key": "script_path",
+                            "name": "脚本路径",
+                            "type": "file",
+                            "default": "/storage/emulated/0/VodPlus/Proxy/T4.php",
+                            "hint": "选择 T4.php 文件",
+                            "required": true,
+                            "filter": "*"
+                        }
+                    ],
+                    "clicks": [
+                        {
+                            "title": "测试猫源",
+                            "action": "webview",
+                            "style": "dialog",
+                            "value": "http://127.0.0.1:{port}/cat/index.config.js",
+                            "content": "测试猫源"
+                        },
+                        {
+                            "title": "打开代理接口",
+                            "style": "dialog",
+                            "action": "webview",
+                            "value": "http://127.0.0.1:{port}/?ac=config"
+                        },
+                        {
+                            "title": "复制地址",
+                            "action": "copy",
+                            "value": "http://127.0.0.1:{port}/?ac=config"
+                        }
+                    ],
+                    "download": {
+                        "url": "https://yydf.540734621.xyz/ejz/T4Proxy-php.zip",
+                        "extract_to": "wwwroot",
+                        "check_file": "wwwroot/T4Proxy.php",
+                        "size": "15.39 KB",
+                        "mirrors": {}
+                    }
+                },
+                {
+                    "id": "test_all_types",
+                    "name": "🇨🇳测试所有变量类型",
+                    "description": "用于测试对话框 UI 的命令",
+                    "command": "php -r \"echo '{text_val} {num_val} {select_val} {switch_val} {file_val} {dir_val} {multiline_val}';\"",
+                    "auto_execute": false,
+                    "show_output": true,
+                    "variables": [
+                        {
+                            "key": "text_val",
+                            "name": "文本输入",
+                            "type": "text",
+                            "default": "hello",
+                            "hint": "普通文本输入框",
+                            "required": true
+                        },
+                        {
+                            "key": "num_val",
+                            "name": "数字输入",
+                            "type": "number",
+                            "default": "8080",
+                            "hint": "端口号",
+                            "required": true,
+                            "min": 1024,
+                            "max": 65535
+                        },
+                        {
+                            "key": "select_val",
+                            "name": "下拉选择",
+                            "type": "select",
+                            "default": "dev",
+                            "hint": "选择运行环境",
+                            "required": true,
+                            "options": [
+                                {
+                                    "label": "开发环境",
+                                    "value": "dev"
+                                },
+                                {
+                                    "label": "测试环境",
+                                    "value": "test"
+                                },
+                                {
+                                    "label": "生产环境",
+                                    "value": "prod"
+                                }
+                            ]
+                        },
+                        {
+                            "key": "switch_val",
+                            "name": "开关选项",
+                            "type": "switch",
+                            "default": "true",
+                            "hint": "启用调试模式",
+                            "required": false
+                        },
+                        {
+                            "key": "file_val",
+                            "name": "文件选择",
+                            "type": "file",
+                            "default": "/sdcard/test.php",
+                            "hint": "选择 PHP 文件",
+                            "required": false,
+                            "filter": "*"
+                        },
+                        {
+                            "key": "dir_val",
+                            "name": "目录选择",
+                            "type": "directory",
+                            "default": "/sdcard/www",
+                            "hint": "选择工作目录",
+                            "required": false
+                        },
+                        {
+                            "key": "multiline_val",
+                            "name": "多行文本",
+                            "type": "text_multiline",
+                            "default": "line1\nline2",
+                            "hint": "输入多行内容",
+                            "required": false
+                        }
+                    ],
+                    "clicks": [
+                        {
+                            "title": "测试链接",
+                            "style": "dialog",
+                            "action": "webview",
+                            "value": "http://127.0.0.1:{num_val}"
+                        },
+                        {
+                            "title": "复制命令",
+                            "action": "copy",
+                            "value": "php -r \"echo '{text_val}'\""
+                        },
+                        {
+                            "title": "内置浏览",
+                            "action": "webview",
+                            "style": "dialog",
+                            "value": "http://127.0.0.1:{num_val}",
+                            "content": "在应用内打开网页"
+                        },
+                        {
+                            "title": "二维码",
+                            "action": "qrcode",
+                            "value": "http://127.0.0.1:{num_val}",
+                            "content": "扫码访问服务"
+                        },
+                        {
+                            "title": "分享",
+                            "action": "share",
+                            "value": "http://127.0.0.1:{num_val}"
+                        },
+                        {
+                            "title": "使用说明",
+                            "action": "alert",
+                            "value": "本命令用于测试所有变量类型，包括文本、数字、选择、开关、文件、目录、多行文本等。",
+                            "content": "请根据需要填写各项参数后运行命令"
+                        },
+                        {
+                            "title": "提示",
+                            "action": "toast",
+                            "value": "当前文本值: {text_val}"
+                        }
+                    ]
+                },
+                {
+                    "id": "run_once",
+                    "name": "🇨🇳立即生成接口",
+                    "description": "手动执行一次接口生成",
+                    "command": "php /storage/emulated/0/VodPlus/自动适配.php",
+                    "auto_execute": true,
+                    "show_output": true,
+                    "clicks": [
+                        {
+                            "title": "打开自动适配接口",
+                            "action": "webview",
+                            "style": "dialog",
+                            "value": "http://127.0.0.1:8901/自动适配.php"
+                        },
+                        {
+                            "title": "📂 打开接口文件",
+                            "action": "webview",
+                            "style": "dialog",
+                            "value": "/storage/emulated/0/VodPlus/接口.json"
+                        },
+                        {
+                            "title": "📱 复制自动适配地址",
+                            "action": "copy",
+                            "value": "http://127.0.0.1:8901/自动适配.php"
+                        },
+                        {
+                            "title": "📱 复制HTTP地址",
+                            "action": "copy",
+                            "value": "http://127.0.0.1:9978/file/VodPlus/接口.json"
+                        }
+                    ]
+                },
+                {
+                    "id": "create_dirs",
+                    "name": "📂 创建扫描目录",
+                    "description": "创建所有需要的本地文件目录",
+                    "command": "mkdir -p /storage/emulated/0/VodPlus/LocalFiles/{php-php,py-py,node-php-js,files-文件,WvSpider-js,xbpq-json,xyq-json,道长-js} && echo '目录创建成功'",
+                    "auto_execute": false,
+                    "show_output": true
+                },
+                {
+                    "id": "test_remote",
+                    "name": "🌐 测试道长远程配置",
+                    "description": "测试道长获取远程配置",
+                    "command": "curl -s http://localhost:5757/config/1 || echo '远程配置获取失败'",
+                    "auto_execute": false,
+                    "show_output": true
+                },
+                {
+                    "id": "create_short",
+                    "name": "🇨🇳🚀 创建随机短链",
+                    "description": "创建随机短链接分享文本",
+                    "command": "curl -X POST -F 'c={content}' -F 'e={expire}' -F 's={password}' {host}",
+                    "auto_execute": false,
+                    "show_output": true,
+                    "variables": [
+                        {
+                            "key": "host",
+                            "name": "服务器地址",
+                            "type": "text",
+                            "default": "https://aries.yuanwangokk.nyc.mn",
+                            "hint": "Pastebin 服务器地址",
+                            "required": true
+                        },
+                        {
+                            "key": "admin_url",
+                            "name": "管理地址",
+                            "type": "text",
+                            "default": "",
+                            "hint": "输入创建时返回的管理地址（带:密码的）",
+                            "required": false
+                        },
+                        {
+                            "key": "content",
+                            "name": "分享内容",
+                            "type": "text_multiline",
+                            "default": "",
+                            "hint": "输入要分享的文本内容",
+                            "required": true
+                        },
+                        {
+                            "key": "expire",
+                            "name": "过期时间",
+                            "type": "text",
+                            "default": "7d",
+                            "hint": "例如：7d(7天), 1h(1小时), 30m(30分钟)",
+                            "required": false
+                        },
+                        {
+                            "key": "password",
+                            "name": "访问密码",
+                            "type": "text",
+                            "default": "",
+                            "hint": "设置密码保护（可选）",
+                            "required": false
+                        }
+                    ],
+                    "clicks": [
+                        {
+                            "title": "📋 复制管理地址",
+                            "action": "copy",
+                            "value": "{admin_url}"
+                        },
+                        {
+                            "title": "ℹ️ 详细说明",
+                            "action": "alert",
+                            "value": "📝 分享文本：\n1. 填写内容\n2. 设置过期时间\n3. 设置密码(可选)\n4. 运行命令创建\n\n📋 管理分享：\n• 读取分享：输入链接运行\n• 更新分享：输入管理地址和新内容\n• 删除分享：输入管理地址运行\n\n📎 上传文件：\n• 选择文件上传\n• 自动添加文件名\n\n⏰ 过期时间格式：\n30s(秒), 30m(分), 24h(时)\n7d(天), 1M(月), 1Y(年)"
+                        },
+                        {
+                            "title": "❓ 常见问题",
+                            "action": "alert",
+                            "value": "Q: 自定义链接要求？\nA: 至少3位，字母数字+_-[]*$@,;\n\nQ: 密码有什么用？\nA: 访问时需要密码才能查看\n\nQ: 文件大小限制？\nA: 取决于服务器配置\n\nQ: 保存时间？\nA: 按设置的过期时间自动删除"
+                        },
+                        {
+                            "title": "🌐 官方文档",
+                            "action": "webview",
+                            "style": "dialog",
+                            "value": "https://github.com/SharzyL/pastebin-worker"
+                        }
+                    ]
+                },
+                {
+                    "id": "create_long",
+                    "name": "🔗 创建随机长链",
+                    "description": "创建随机长链接分享文本",
+                    "command": "curl -X POST -F 'c={content}' -F 'e={expire}' -F 's={password}' -F 'p=true' {host}",
+                    "auto_execute": false,
+                    "show_output": true,
+                    "variables": [
+                        {
+                            "key": "host",
+                            "name": "服务器地址",
+                            "type": "text",
+                            "default": "https://aries.yuanwangokk.nyc.mn",
+                            "hint": "Pastebin 服务器地址",
+                            "required": true
+                        },
+                        {
+                            "key": "admin_url",
+                            "name": "管理地址",
+                            "type": "text",
+                            "default": "",
+                            "hint": "输入创建时返回的管理地址（带:密码的）",
+                            "required": true
+                        },
+                        {
+                            "key": "content",
+                            "name": "分享内容",
+                            "type": "text_multiline",
+                            "default": "",
+                            "hint": "输入要分享的文本内容",
+                            "required": true
+                        },
+                        {
+                            "key": "expire",
+                            "name": "过期时间",
+                            "type": "text",
+                            "default": "7d",
+                            "hint": "例如：7d(7天), 1h(1小时), 30m(30分钟)",
+                            "required": false
+                        },
+                        {
+                            "key": "password",
+                            "name": "访问密码",
+                            "type": "text",
+                            "default": "",
+                            "hint": "设置密码保护（可选）",
+                            "required": false
+                        }
+                    ],
+                    "clicks": [
+                        {
+                            "title": "📋 复制管理地址",
+                            "action": "copy",
+                            "value": "{admin_url}"
+                        },
+                        {
+                            "title": "ℹ️ 详细说明",
+                            "action": "alert",
+                            "value": "📝 分享文本：\n1. 填写内容\n2. 设置过期时间\n3. 设置密码(可选)\n4. 运行命令创建\n\n📋 管理分享：\n• 读取分享：输入链接运行\n• 更新分享：输入管理地址和新内容\n• 删除分享：输入管理地址运行\n\n📎 上传文件：\n• 选择文件上传\n• 自动添加文件名\n\n⏰ 过期时间格式：\n30s(秒), 30m(分), 24h(时)\n7d(天), 1M(月), 1Y(年)"
+                        },
+                        {
+                            "title": "❓ 常见问题",
+                            "action": "alert",
+                            "value": "Q: 自定义链接要求？\nA: 至少3位，字母数字+_-[]*$@,;\n\nQ: 密码有什么用？\nA: 访问时需要密码才能查看\n\nQ: 文件大小限制？\nA: 取决于服务器配置\n\nQ: 保存时间？\nA: 按设置的过期时间自动删除"
+                        },
+                        {
+                            "title": "🌐 官方文档",
+                            "action": "webview",
+                            "style": "dialog",
+                            "value": "https://github.com/SharzyL/pastebin-worker"
+                        }
+                    ]
+                },
+                {
+                    "id": "create_custom",
+                    "name": "🎨 创建自定义链接",
+                    "description": "使用自定义路径创建分享链接",
+                    "command": "curl -X POST -F 'c={content}' -F 'e={expire}' -F 's={password}' -F 'n={custom_path}' {host}",
+                    "auto_execute": false,
+                    "show_output": true,
+                    "variables": [
+                        {
+                            "key": "host",
+                            "name": "服务器地址",
+                            "type": "text",
+                            "default": "https://aries.yuanwangokk.nyc.mn",
+                            "hint": "Pastebin 服务器地址",
+                            "required": true
+                        },
+                        {
+                            "key": "admin_url",
+                            "name": "管理地址",
+                            "type": "text",
+                            "default": "",
+                            "hint": "输入创建时返回的管理地址（带:密码的）",
+                            "required": true
+                        },
+                        {
+                            "key": "content",
+                            "name": "分享内容",
+                            "type": "text_multiline",
+                            "default": "",
+                            "hint": "输入要分享的文本内容",
+                            "required": true
+                        },
+                        {
+                            "key": "custom_path",
+                            "name": "自定义路径",
+                            "type": "text",
+                            "default": "",
+                            "hint": "自定义短链（3位以上字母数字）",
+                            "required": true
+                        },
+                        {
+                            "key": "expire",
+                            "name": "过期时间",
+                            "type": "text",
+                            "default": "7d",
+                            "hint": "例如：7d(7天), 1h(1小时), 30m(30分钟)",
+                            "required": false
+                        },
+                        {
+                            "key": "password",
+                            "name": "访问密码",
+                            "type": "text",
+                            "default": "",
+                            "hint": "设置密码保护（可选）",
+                            "required": false
+                        }
+                    ],
+                    "clicks": [
+                        {
+                            "title": "📋 复制管理地址",
+                            "action": "copy",
+                            "value": "{admin_url}"
+                        },
+                        {
+                            "title": "ℹ️ 详细说明",
+                            "action": "alert",
+                            "value": "📝 分享文本：\n1. 填写内容\n2. 设置过期时间\n3. 设置密码(可选)\n4. 运行命令创建\n\n📋 管理分享：\n• 读取分享：输入链接运行\n• 更新分享：输入管理地址和新内容\n• 删除分享：输入管理地址运行\n\n📎 上传文件：\n• 选择文件上传\n• 自动添加文件名\n\n⏰ 过期时间格式：\n30s(秒), 30m(分), 24h(时)\n7d(天), 1M(月), 1Y(年)"
+                        },
+                        {
+                            "title": "❓ 常见问题",
+                            "action": "alert",
+                            "value": "Q: 自定义链接要求？\nA: 至少3位，字母数字+_-[]*$@,;\n\nQ: 密码有什么用？\nA: 访问时需要密码才能查看\n\nQ: 文件大小限制？\nA: 取决于服务器配置\n\nQ: 保存时间？\nA: 按设置的过期时间自动删除"
+                        },
+                        {
+                            "title": "🌐 官方文档",
+                            "action": "webview",
+                            "style": "dialog",
+                            "value": "https://github.com/SharzyL/pastebin-worker"
+                        },
+                        {
+                            "title": "✅ 路径要求",
+                            "action": "alert",
+                            "value": "自定义路径要求:\n• 至少3位字符\n• 支持字母、数字\n• 支持符号: +_-[]*$@,;"
+                        }
+                    ]
+                },
+                {
+                    "id": "read_paste",
+                    "name": "📖 读取分享",
+                    "description": "读取已分享的内容",
+                    "command": "curl -s {paste_url}",
+                    "auto_execute": false,
+                    "show_output": true,
+                    "variables": [
+                        {
+                            "key": "paste_url",
+                            "name": "分享链接",
+                            "type": "text",
+                            "default": "",
+                            "hint": "输入要读取的分享链接",
+                            "required": true
+                        }
+                    ],
+                    "clicks": [
+                        {
+                            "title": "🌐 浏览器打开",
+                            "action": "webview",
+                            "style": "dialog",
+                            "value": "{paste_url}"
+                        },
+                        {
+                            "title": "ℹ️ 详细说明",
+                            "action": "alert",
+                            "value": "📝 分享文本：\n1. 填写内容\n2. 设置过期时间\n3. 设置密码(可选)\n4. 运行命令创建\n\n📋 管理分享：\n• 读取分享：输入链接运行\n• 更新分享：输入管理地址和新内容\n• 删除分享：输入管理地址运行\n\n📎 上传文件：\n• 选择文件上传\n• 自动添加文件名\n\n⏰ 过期时间格式：\n30s(秒), 30m(分), 24h(时)\n7d(天), 1M(月), 1Y(年)"
+                        },
+                        {
+                            "title": "❓ 常见问题",
+                            "action": "alert",
+                            "value": "Q: 自定义链接要求？\nA: 至少3位，字母数字+_-[]*$@,;\n\nQ: 密码有什么用？\nA: 访问时需要密码才能查看\n\nQ: 文件大小限制？\nA: 取决于服务器配置\n\nQ: 保存时间？\nA: 按设置的过期时间自动删除"
+                        },
+                        {
+                            "title": "🌐 官方文档",
+                            "action": "webview",
+                            "style": "dialog",
+                            "value": "https://github.com/SharzyL/pastebin-worker"
+                        },
+                        {
+                            "title": "📱 生成二维码",
+                            "action": "qrcode",
+                            "value": "{paste_url}"
+                        }
+                    ]
+                },
+                {
+                    "id": "read_paste",
+                    "name": "剪切板管理面板",
+                    "description": "剪切板管理面板",
+                    "command": "curl -s {paste_url}",
+                    "auto_execute": false,
+                    "show_output": true,
+                    "variables": [
+                        {
+                            "key": "admin_url",
+                            "name": "管理地址",
+                            "type": "text",
+                            "default": "",
+                            "hint": "输入创建时返回的管理地址（带:密码的）",
+                            "required": true
+                        }
+                    ],
+                    "clicks": [
+                        {
+                            "title": "🌐 浏览器打开",
+                            "action": "webview",
+                            "style": "dialog",
+                            "value": "{paste_url}"
+                        },
+                        {
+                            "title": "ℹ️ 详细说明",
+                            "action": "alert",
+                            "value": "📝 分享文本：\n1. 填写内容\n2. 设置过期时间\n3. 设置密码(可选)\n4. 运行命令创建\n\n📋 管理分享：\n• 读取分享：输入链接运行\n• 更新分享：输入管理地址和新内容\n• 删除分享：输入管理地址运行\n\n📎 上传文件：\n• 选择文件上传\n• 自动添加文件名\n\n⏰ 过期时间格式：\n30s(秒), 30m(分), 24h(时)\n7d(天), 1M(月), 1Y(年)"
+                        },
+                        {
+                            "title": "❓ 常见问题",
+                            "action": "alert",
+                            "value": "Q: 自定义链接要求？\nA: 至少3位，字母数字+_-[]*$@,;\n\nQ: 密码有什么用？\nA: 访问时需要密码才能查看\n\nQ: 文件大小限制？\nA: 取决于服务器配置\n\nQ: 保存时间？\nA: 按设置的过期时间自动删除"
+                        },
+                        {
+                            "title": "🌐 官方文档",
+                            "action": "webview",
+                            "style": "dialog",
+                            "value": "https://github.com/SharzyL/pastebin-worker"
+                        },
+                        {
+                            "title": "📱 生成二维码",
+                            "action": "qrcode",
+                            "value": "{paste_url}"
+                        }
+                    ]
+                },
+                {
+                    "id": "delete_paste",
+                    "name": "🗑️ 删除分享",
+                    "description": "删除已分享的内容（使用管理地址）",
+                    "command": "curl -X DELETE {admin_url}",
+                    "auto_execute": false,
+                    "show_output": true,
+                    "variables": [
+                        {
+                            "key": "admin_url",
+                            "name": "管理地址",
+                            "type": "text",
+                            "default": "",
+                            "hint": "输入创建时返回的管理地址（带:密码的）",
+                            "required": true
+                        }
+                    ],
+                    "clicks": [
+                        {
+                            "title": "⚠️ 确认删除",
+                            "action": "alert",
+                            "value": "确认要删除这个分享吗？删除后无法恢复！"
+                        },
+                        {
+                            "title": "📋 复制管理地址",
+                            "action": "copy",
+                            "value": "{admin_url}"
+                        }
+                    ]
+                },
+                {
+                    "id": "upload_file",
+                    "name": "📎 上传文件",
+                    "description": "上传文件到 pastebin",
+                    "command": "cat '{file_path}' | curl -X POST -F 'c=@-' -F 'e={expire}' -F 's={password}' {host}",
+                    "auto_execute": false,
+                    "show_output": true,
+                    "variables": [
+                        {
+                            "key": "host",
+                            "name": "服务器地址",
+                            "type": "text",
+                            "default": "https://aries.yuanwangokk.nyc.mn",
+                            "hint": "Pastebin 服务器地址，输入创建时返回的管理地址（带:密码的）",
+                            "required": true
+                        },
+                        {
+                            "key": "file_path",
+                            "name": "文件路径",
+                            "type": "file",
+                            "default": "",
+                            "hint": "选择要上传的文件",
+                            "required": true,
+                            "filter": "*"
+                        },
+                        {
+                            "key": "expire",
+                            "name": "过期时间",
+                            "type": "text",
+                            "default": "7d",
+                            "hint": "例如：7d(7天), 1h(1小时), 30m(30分钟)",
+                            "required": false
+                        },
+                        {
+                            "key": "password",
+                            "name": "访问密码",
+                            "type": "text",
+                            "default": "",
+                            "hint": "设置密码保护（可选）",
+                            "required": false
+                        }
+                    ],
+                    "clicks": [
+                        {
+                            "title": "👀 预览文件",
+                            "action": "shell",
+                            "value": "cat '{file_path}' | head -n 20",
+                            "show_output": true
+                        },
+                        {
+                            "title": "📏 文件大小",
+                            "action": "shell",
+                            "value": "ls -lh '{file_path}' | awk '{print $5}'",
+                            "show_output": true
+                        }
+                    ]
+                }
+            ],
+            "downloads": [
+                {
+                    "arch": "arm64-v8a",
+                    "url": "http://127.0.0.1:9978/file/VodPlus/EnvFiles/二进制/php-arm64.zip",
+                    "size": "15.2 MB",
+                    "mirrors": {
+                        "github": "http://127.0.0.1:9978/file/VodPlus/EnvFiles/二进制/php-arm64.zip",
+                        "gitlab": "https://gitlab.com/ccfork/binary/-/raw/3ec029a37bc2b9515d245b2500a32867434f7e3a/files/php_armv8a.zip"
+                    }
+                },
+                {
+                    "arch": "armeabi-v7a",
+                    "url": "http://127.0.0.1:9978/file/VodPlus/EnvFiles/二进制/php-arm32.zip",
+                    "size": "14.8 MB",
+                    "mirrors": {
+                        "github": "https://github.com/example/php/releases/download/php-android-armeabi-v7a.tar.gz",
+                        "gitlab": "https://gitlab.example.com/php/php-android-armeabi-v7a.tar.gz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "nodejs",
+            "group": "runtime",
+            "cmd_name": "node",
+            "version": "25.2.1",
+            "icon": "https://img.icons8.com/?size=240&id=hsPbhkOH4FMe&format=png&color=000000",
+            "auto_install": true,
+            "available": true,
+            "show": true,
+            "info": "Node.js静态编译版本，适用于Android ARM架构",
+            "binary_path": "bin/node",
+            "var_path": {
+                "LD_LIBRARY_PATH": "lib",
+                "OPENSSL_CONF": "/dev/null",
+                "NODE_PATH": "lib/node_modules"
+            },
+            "commands": [
+                {
+                    "id": "本地包_node",
+                    "name": "🇨🇳一键运行",
+                    "description": "一键安装",
+                    "command": "node",
+                    "auto_execute": false,
+                    "show_output": true,
+                    "min_version": 110,
+                    "variables": [],
+                    "clicks": [
+                        {
+                            "title": "复制接口地址",
+                            "action": "copy",
+                            "value": "http://127.0.0.1:8901/自动适配.php"
+                        }
+                    ],
+                    "download": {
+                        "title": "下载地址",
+                        "url": "http://127.0.0.1:9978/file/Download/Telegram/VodPlus.7z",
+                        "extract_to": "/storage/emulated/0/VodPlus"
+                    }
+                },
+                {
+                    "id": "run_node-web",
+                    "name": "🇨🇳node-WEB",
+                    "description": "运行node-web服务",
+                    "command": "node  {script_path} {port}",
+                    "auto_execute": false,
+                    "show_output": true,
+                    "variables": [
+                        {
+                            "key": "port",
+                            "name": "端口号",
+                            "type": "number",
+                            "default": "3000",
+                            "hint": "服务器监听端口",
+                            "required": true,
+                            "min": 1024,
+                            "max": 65535
+                        },
+                        {
+                            "key": "script_path",
+                            "name": "脚本路径",
+                            "type": "file",
+                            "default": "/storage/emulated/0/VodPlus/Proxy/官方vodplus-web/serve.js",
+                            "hint": "选择JS文件",
+                            "required": true,
+                            "filter": "*"
+                        }
+                    ],
+                    "clicks": [
+                        {
+                            "title": "打开web链接",
+                            "action": "webview",
+                            "style": "dialog",
+                            "value": "http://127.0.0.1:3000"
+                        },
+                        {
+                            "title": "复制地址",
+                            "action": "copy",
+                            "value": "http://127.0.0.1:3000"
+                        },
+                        {
+                            "title": "API 测试",
+                            "action": "webview",
+                            "style": "dialog",
+                            "value": "http://127.0.0.1:9978"
+                        },
+                        {
+                            "title": "老张web",
+                            "action": "webview",
+                            "style": "dialog",
+                            "value": "http://127.0.0.1:9978/file/VodPlus/sjbl.html"
+                        }
+                    ]
+                },
+                {
+                    "id": "t4_proxy",
+                    "name": "🇨🇳T4代理服务器",
+                    "description": "启动 Spider API Type 4 代理服务器，支持将壳子当前的所有数据(py,php,js,jar以及t1和t4)暴露为T4接口",
+                    "command": "node {script_path} --port {port}",
+                    "auto_execute": false,
+                    "show_output": false,
+                    "download": {
+                        "title": "脚本地址",
+                        "url": "https://raw.githubusercontent.com/ecocoinsch/files/bc6e339038fd186b80b33a25de2c261c1c580fc2/T4Proxy.js",
+                        "save_to": "/storage/emulated/0/VodPlus/试验室/本地服务/T4Proxy.js",
+                        "check_file": "Proxy/T4Proxy.js",
+                        "size": "JS脚本"
+                    },
+                    "variables": [
+                        {
+                            "default": "/storage/emulated/0/VodPlus/Proxy/T4Proxy.js",
+                            "filter": "*",
+                            "hint": "选择要执行的JS文件",
+                            "key": "script_path",
+                            "name": "脚本路径",
+                            "required": true,
+                            "type": "file"
+                        },
+                        {
+                            "key": "port",
+                            "name": "端口号",
+                            "type": "number",
+                            "default": "10998",
+                            "hint": "服务器监听端口",
+                            "required": true,
+                            "min": 1024,
+                            "max": 65535
+                        }
+                    ],
+                    "clicks": [
+                        {
+                            "title": "测试猫源",
+                            "action": "webview",
+                            "style": "dialog",
+                            "value": "http://127.0.0.1:{port}/cat/index.config.js",
+                            "content": "测试猫源"
+                        },
+                        {
+                            "title": "配置接口",
+                            "action": "webview",
+                            "style": "dialog",
+                            "value": "http://127.0.0.1:{port}?ac=config",
+                            "content": "查看所有站源配置"
+                        },
+                        {
+                            "title": "接口文档",
+                            "action": "alert",
+                            "value": "T4代理接口说明：\n\n• 配置接口: /?ac=config\n• 首页接口: /站源key\n• 分类接口: /站源key?t=分类ID&pg=页码\n• 详情接口: /站源key?ids=视频ID\n• 搜索接口: /站源key?wd=关键词&pg=页码\n• 播放接口: /站源key?flag=播放源&id=播放ID\n\n提示：ac参数可省略，系统会自动识别接口类型\n筛选参数：area=地区&year=年份&type=类型&class=剧情&lang=语言",
+                            "content": "详细接口说明"
+                        },
+                        {
+                            "title": "打开首页",
+                            "style": "dialog",
+                            "action": "webview",
+                            "value": "http://127.0.0.1:{port}"
+                        },
+                        {
+                            "title": "生成二维码",
+                            "action": "qrcode",
+                            "value": "http://127.0.0.1:{port}?ac=config",
+                            "content": "扫码访问配置接口"
+                        },
+                        {
+                            "title": "复制地址",
+                            "action": "copy",
+                            "value": "http://127.0.0.1:{port}"
+                        }
+                    ]
+                },
+                {
+                    "id": "dz_drpy_node",
+                    "name": "🇨🇳道长Drpy一键运行",
+                    "description": "啥都不说了,内置一堆源,运行后复制配置到设置点播中粘贴即可",
+                    "command": "node /storage/emulated/0/VodPlus/drpy_node/index.js",
+                    "auto_execute": false,
+                    "show_output": true,
+                    "min_version": 110,
+                    "clicks": [
+                        {
+                            "title": "复制配置",
+                            "action": "copy",
+                            "value": "http://127.0.0.1:5757/config/1"
+                        }
+                    ],
+                    "download": {
+                        "title": "下载地址",
+                        "url": "https://git-proxy.playdreamer.cn/hjdhnx/drpy-node/releases/download/V1.3.27/drpy-node-20260301.7z",
+                        "extract_to": "drpy_node",
+                        "check_file": "drpy_node/index.js",
+                        "size": "25Mb",
+                        "mirrors": {
+                            "github": "https://github.com/hjdhnx/drpy-node/releases/download/V1.3.27/drpy-node-20260301.7z"
+                        }
+                    }
+                },
+                {
+                    "id": "run_tts",
+                    "name": "🇨🇳运行TTS语音服务",
+                    "description": "运行TTS服务",
+                    "command": "node {script_path}",
+                    "auto_execute": false,
+                    "show_output": true,
+                    "variables": [
+                        {
+                            "default": "/storage/emulated/0/VodPlus/Proxy/TTSServer.js",
+                            "filter": "*",
+                            "hint": "选择要执行的JS文件",
+                            "key": "script_path",
+                            "name": "脚本路径",
+                            "required": true,
+                            "type": "file"
+                        }
+                    ]
+                },
+                {
+                    "id": "run_migu",
+                    "name": "🇨🇳运行咪咕服务",
+                    "description": "运行咪咕服务",
+                    "command": "node {script_path}",
+                    "auto_execute": true,
+                    "show_output": true,
+                    "variables": [
+                        {
+                            "default": "/storage/emulated/0/VodPlus/Proxy/migu_video-main/app.js",
+                            "filter": "*",
+                            "hint": "选择要执行的JS文件",
+                            "key": "script_path",
+                            "name": "脚本路径",
+                            "required": true,
+                            "type": "file"
+                        }
+                    ]
+                },
+                {
+                    "id": "run_leo_danmu",
+                    "name": "🇨🇳运行Leo弹幕",
+                    "description": "运行Leo弹幕Node.js服务",
+                    "command": "node {script_path}",
+                    "auto_execute": true,
+                    "show_output": true,
+                    "variables": [
+                        {
+                            "default": "/storage/emulated/0/VodPlus/Proxy/Leo弹幕-node/main.js",
+                            "filter": "*",
+                            "hint": "选择要执行的 .py 文件",
+                            "key": "script_path",
+                            "name": "脚本路径",
+                            "required": true,
+                            "type": "file"
+                        }
+                    ],
+                    "ext": {
+                        "apiUrl": "http://127.0.0.1:9321",
+                        "autoPushEnabled": true,
+                        "danmakuStyle": "模板一",
+                        "lpAlpha": 0.9
+                    }
+                },
+                {
+                    "id": "run_script",
+                    "name": "🇨🇳运行指定脚本",
+                    "description": "执行指定的 JavaScript 脚本",
+                    "command": "node {script_path}",
+                    "auto_execute": false,
+                    "show_output": true,
+                    "variables": [
+                        {
+                            "key": "script_path",
+                            "name": "脚本路径",
+                            "type": "file",
+                            "default": "",
+                            "hint": "选择要执行的 JS 脚本",
+                            "required": true,
+                            "filter": "*"
+                        }
+                    ]
+                }
+            ],
+            "downloads": [
+                {
+                    "arch": "arm64-v8a",
+                    "url": "http://127.0.0.1:9978/file/VodPlus/EnvFiles/二进制/nodejs_arm64.zip",
+                    "liburl": "http://127.0.0.1:9978/file/VodPlus/EnvFiles/二进制/nodejs_lib_arm64.zip",
+                    "size": "293.33 MB",
+                    "mirrors": {
+                        "github": "http://127.0.0.1:9978/file/VodPlus/EnvFiles/二进制/nodejs_arm64.zip",
+                        "gitlab": "http://127.0.0.1:9978/file/VodPlus/EnvFiles/二进制/nodejs_arm64.zip"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "python",
+            "group": "runtime",
+            "version": "3.13",
+            "icon": "https://img.icons8.com/?size=240&id=13441&format=png&color=000000",
+            "auto_install": true,
+            "available": true,
+            "show": true,
+            "info": "Python 3.13 静态提取版，适用于 Android ARM64，支持 pip 安装第三方包。",
+            "binary_path": "bin/python3",
+            "var_path": {
+                "PATH": "bin",
+                "LD_LIBRARY_PATH": "lib",
+                "PYTHONHOME": ".",
+                "PYTHONPATH": "lib/python3/site-packages"
+            },
+            "commands": [
+                {
+                    "id": "run_订阅-xray",
+                    "name": "订阅转Xray配置",
+                    "description": "从订阅链接获取节点并生成Xray配置（支持多协议）",
+                    "command": "python3 {script_path} -u {subscription_url} -o {output_path}",
+                    "auto_execute": false,
+                    "show_output": true,
+                    "variables": [
+                        {
+                            "default": "/storage/emulated/0/VodPlus/EnvFiles/config/python/xray.py",
+                            "filter": "*.py",
+                            "hint": "选择 Xray 订阅转换脚本",
+                            "key": "script_path",
+                            "name": "脚本路径",
+                            "required": true,
+                            "type": "file"
+                        },
+                        {
+                            "default": "",
+                            "filter": "",
+                            "hint": "输入订阅链接 (支持 VMess/VLESS/Trojan/SS)",
+                            "key": "subscription_url",
+                            "name": "订阅链接",
+                            "required": true,
+                            "type": "text"
+                        },
+                        {
+                            "default": "",
+                            "filter": "",
+                            "hint": "Xray 配置文件输出路径",
+                            "key": "output_path",
+                            "name": "输出路径",
+                            "required": true,
+                            "type": "file"
+                        }
+                    ]
+                },
+                {
+                    "id": "run_txt-yaml",
+                    "name": "txt2yaml",
+                    "description": "txt转yaml",
+                    "command": "python3 {script_path}",
+                    "auto_execute": true,
+                    "show_output": true,
+                    "variables": [
+                        {
+                            "default": "/storage/emulated/0/VodPlus/EnvFiles/config/python/txt2yaml/txt节点转换yaml.py",
+                            "filter": "*",
+                            "hint": "选择要执行的 .py 文件",
+                            "key": "script_path",
+                            "name": "脚本路径",
+                            "required": true,
+                            "type": "file"
+                        }
+                    ]
+                },
+                {
+                    "id": "run-yaml-singbox",
+                    "name": "yaml节点转换singbox服务",
+                    "description": "yaml转singbox",
+                    "command": "python3 {script_path}",
+                    "auto_execute": true,
+                    "show_output": true,
+                    "variables": [
+                        {
+                            "default": "/storage/emulated/0/VodPlus/EnvFiles/config/python/yaml2singbox/yaml节点转换singbox.py",
+                            "filter": "*",
+                            "hint": "选择要执行的 .py 文件",
+                            "key": "script_path",
+                            "name": "脚本路径",
+                            "required": true,
+                            "type": "file"
+                        }
+                    ]
+                },
+                {
+                    "id": "run-all_nodes-singbox",
+                    "name": "all_node节点转换singbox服务",
+                    "description": "yaml转singbox",
+                    "command": "python3 {script_path}",
+                    "auto_execute": true,
+                    "show_output": true,
+                    "variables": [
+                        {
+                            "default": "/storage/emulated/0/VodPlus/EnvFiles/config/python/yaml2singbox/all_nodes节点转换singbox.py",
+                            "filter": "*",
+                            "hint": "选择要执行的 .py 文件",
+                            "key": "script_path",
+                            "name": "脚本路径",
+                            "required": true,
+                            "type": "file"
+                        }
+                    ]
+                },
+                {
+                    "auto_execute": false,
+                    "background": false,
+                    "clicks": [],
+                    "command": "python3 {script_path}",
+                    "description": "执行指定的 Python 脚本文件",
+                    "id": "run_script2",
+                    "name": "vpn.py",
+                    "show_output": true,
+                    "variables": [
+                        {
+                            "default": "/storage/emulated/0/VodPlus/EnvFiles/config/python/txt2yaml/vpn.py",
+                            "filter": "*",
+                            "hint": "选择要执行的 .py 文件",
+                            "key": "script_path",
+                            "name": "脚本路径",
+                            "required": true,
+                            "type": "file"
+                        }
+                    ]
+                },
+                {
+                    "auto_execute": false,
+                    "background": false,
+                    "clicks": [],
+                    "command": "python3 {script_path}",
+                    "description": "执行指定的 Python 脚本文件",
+                    "id": "run_script3",
+                    "name": "ss.py",
+                    "show_output": true,
+                    "variables": [
+                        {
+                            "default": "/storage/emulated/0/VodPlus/EnvFiles/config/python/txt2yaml/ss.py",
+                            "filter": "*",
+                            "hint": "选择要执行的 .py 文件",
+                            "key": "script_path",
+                            "name": "脚本路径",
+                            "required": true,
+                            "type": "file"
+                        }
+                    ]
+                },
+                {
+                    "auto_execute": false,
+                    "background": false,
+                    "clicks": [],
+                    "command": "python3 {script_path}",
+                    "description": "执行指定的 Python 脚本文件",
+                    "id": "run_script4",
+                    "name": "all_nodes节点转换yaml",
+                    "show_output": true,
+                    "variables": [
+                        {
+                            "default": "/storage/emulated/0/VodPlus/EnvFiles/config/python/txt2yaml/all_nodes节点转换yaml.py",
+                            "filter": "*",
+                            "hint": "选择要执行的 .py 文件",
+                            "key": "script_path",
+                            "name": "脚本路径",
+                            "required": true,
+                            "type": "file"
+                        }
+                    ]
+                },
+                {
+                    "auto_execute": false,
+                    "background": false,
+                    "clicks": [],
+                    "command": "python3 {script_path}",
+                    "description": "执行指定的 Python 脚本文件",
+                    "id": "run_script5",
+                    "name": "HW.py",
+                    "show_output": true,
+                    "variables": [
+                        {
+                            "default": "/storage/emulated/0/VodPlus/EnvFiles/config/python/txt2yaml/HW.py",
+                            "filter": "*",
+                            "hint": "选择要执行的 .py 文件",
+                            "key": "script_path",
+                            "name": "脚本路径",
+                            "required": true,
+                            "type": "file"
+                        }
+                    ]
+                },
+                {
+                    "id": "pip_pyyaml",
+                    "name": "自动安装pyyaml依赖",
+                    "description": "自动安装pyyaml依赖-txt转yaml",
+                    "command": "python3 -m pip install pyyaml",
+                    "auto_execute": true,
+                    "show_output": true,
+                    "variables": []
+                },
+                {
+                    "auto_execute": false,
+                    "background": false,
+                    "clicks": [],
+                    "command": "python3 --version",
+                    "description": "显示 Python 版本信息",
+                    "id": "version",
+                    "name": "查看版本",
+                    "show_output": true,
+                    "variables": []
+                },
+                {
+                    "auto_execute": false,
+                    "background": false,
+                    "clicks": [],
+                    "command": "python3 -m pip list",
+                    "description": "列出已安装的第三方包",
+                    "id": "pip_list",
+                    "name": "已安装包",
+                    "show_output": true,
+                    "variables": []
+                },
+                {
+                    "auto_execute": false,
+                    "background": false,
+                    "clicks": [],
+                    "command": "python3 -m pip install {package}",
+                    "description": "通过 pip 安装指定的 Python 包",
+                    "id": "pip_install",
+                    "name": "安装包",
+                    "show_output": true,
+                    "variables": [
+                        {
+                            "default": "requests",
+                            "hint": "输入要安装的包名，如 requests、httpx",
+                            "key": "package",
+                            "name": "包名",
+                            "required": true,
+                            "type": "text"
+                        }
+                    ]
+                },
+                {
+                    "auto_execute": false,
+                    "background": false,
+                    "clicks": [],
+                    "command": "python3 -m pip uninstall {package} -y",
+                    "description": "通过 pip 卸载指定的 Python 包",
+                    "id": "pip_uninstall",
+                    "name": "卸载包",
+                    "show_output": true,
+                    "variables": [
+                        {
+                            "default": "",
+                            "hint": "输入要卸载的包名",
+                            "key": "package",
+                            "name": "包名",
+                            "required": true,
+                            "type": "text"
+                        }
+                    ]
+                },
+                {
+                    "auto_execute": false,
+                    "background": false,
+                    "clicks": [],
+                    "command": "python3 -m pip install --upgrade {package}",
+                    "description": "升级指定的 Python 包到最新版本",
+                    "id": "pip_upgrade",
+                    "name": "升级包",
+                    "show_output": true,
+                    "variables": [
+                        {
+                            "default": "pip",
+                            "hint": "输入要升级的包名，留空可升级 pip 本身",
+                            "key": "package",
+                            "name": "包名",
+                            "required": true,
+                            "type": "text"
+                        }
+                    ]
+                },
+                {
+                    "auto_execute": false,
+                    "background": true,
+                    "clicks": [],
+                    "command": "python3 {script_path}",
+                    "description": "在后台执行指定的 Python 脚本（适合长期运行的服务）",
+                    "id": "run_script_bg",
+                    "name": "后台运行脚本",
+                    "show_output": false,
+                    "variables": [
+                        {
+                            "default": "/storage/emulated/0/",
+                            "filter": "*",
+                            "hint": "选择要后台执行的 .py 文件",
+                            "key": "script_path",
+                            "name": "脚本路径",
+                            "required": true,
+                            "type": "file"
+                        }
+                    ]
+                },
+                {
+                    "auto_execute": false,
+                    "background": true,
+                    "clicks": [],
+                    "command": "python3 -m http.server {port} --directory {root_dir}",
+                    "description": "在指定目录启动一个简单的 HTTP 文件服务器",
+                    "id": "http_server",
+                    "name": "HTTP 文件服务",
+                    "show_output": true,
+                    "variables": [
+                        {
+                            "default": "8080",
+                            "hint": "HTTP 服务监听端口",
+                            "key": "port",
+                            "max": 65535,
+                            "min": 1024,
+                            "name": "端口号",
+                            "required": true,
+                            "type": "number"
+                        },
+                        {
+                            "default": "/storage/emulated/0/",
+                            "hint": "对外提供访问的目录",
+                            "key": "root_dir",
+                            "name": "服务目录",
+                            "required": true,
+                            "type": "directory"
+                        }
+                    ]
+                },
+                {
+                    "auto_execute": false,
+                    "background": false,
+                    "clicks": [],
+                    "command": "python3 -c \"{code}\"",
+                    "description": "直接输入并执行一段 Python 代码",
+                    "id": "run_code",
+                    "name": "执行代码片段",
+                    "show_output": true,
+                    "variables": [
+                        {
+                            "default": "import sys; print(sys.version)",
+                            "hint": "输入要执行的 Python 代码",
+                            "key": "code",
+                            "name": "代码",
+                            "required": true,
+                            "type": "text_multiline"
+                        }
+                    ]
+                }
+            ],
+            "downloads": [
+                {
+                    "arch": "arm64-v8a",
+                    "size": "～800 MB",
+                    "url": "http://127.0.0.1:9978/file/VodPlus/EnvFiles/二进制/python-3.13.12-arm64-v8a.zip",
+                    "mirrors": {
+                        "github": "http://127.0.0.1:9978/file/VodPlus/EnvFiles/二进制/python-3.13.12-arm64-v8a.zip",
+                        "gitlab": "https://gitlab.example.com/python/python-android-arm64-v8a.tar.gz"
+                    }
+                }
+            ],
+            "imported": false,
+            "settings": []
+        }
+    ]
+}

@@ -9,12 +9,12 @@ class Spider(BaseSpider):
         return "py动作测试"
 
     def init(self, extend=""):
-        self.port = 8901
+        self.port =8901
 
     def homeContent(self, filter):
         return {
             'class': [
-                {'type_id': 'action', 'type_name': '动作'},
+                {'type_id': 'action', 'type_name': '悟空七十二变'},
             ]
         }
 
@@ -61,15 +61,31 @@ class Spider(BaseSpider):
     def _action_list(self):
         return [
             self._vod('访问网址', {'actionId': '单项输入', 'id': 'text', 'type': 'input','title': '网址输入', 'tip': '请输入网址', 'value': '','msg': '请输入网址'}),
+            self._vod('WhosTV', {'actionId': 'OPEN_URL', 'type': 'browser', 'title': 'browser', "style": "fullscreen", 'height': -260, 'textZoom': 70, 'url': 'https://whos.tv/actresses'}),
             self._vod('油管', {'actionId': 'OPEN_URL', 'type': 'browser', 'title': 'browser','height': -260, 'textZoom': 70, 'url': 'https://m.youtube.com'}),
             self._vod('国际快手', {'actionId': 'OPEN_URL', 'type': 'browser', 'title': 'browser', "style": "fullscreen", 'height': -260, 'textZoom': 70, 'url': 'https://www.kwai.com/'}),
-            self._vod('喜刷刷', {'actionId': 'OPEN_URL', 'type': 'browser', 'title': 'browser', "style": "fullscreen", 'height': -260, 'textZoom': 70, 'url': f'http://127.0.0.1:8901/妹子.html'}),
-            self._vod('裤佬音乐', {'actionId': 'OPEN_URL', 'type': 'browser', 'title': 'browser', "style": "fullscreen", 'height': -260, 'textZoom': 70, 'url': f'http://localhost:{self.port}/html/裤佬音乐.html'}),
+            self._vod('抖音', {'actionId': 'OPEN_URL', 'type': 'browser', 'title': 'browser', "style": "fullscreen", 'height': -260, 'textZoom': 70, 'url': 'https://www.douyin.com/?is_from_mobile_home=1&recommend=1'}),
+            self._vod('随机小姐姐', {'actionId': 'OPEN_URL', 'type': 'browser', 'title': 'browser', "style": "fullscreen", 'height': -260, 'textZoom': 70, 'url': 'https://girl.gs/super.php'}),
+            self._vod('随机小姐姐1', {'actionId': 'OPEN_URL', 'type': 'browser', 'title': 'browser', "style": "fullscreen", 'height': -260, 'textZoom': 70, 'url': 'https://girl.gs'}),
+            self._vod('喜刷刷', {'actionId': 'OPEN_URL', 'type': 'browser', 'title': 'browser', "style": "fullscreen", 'height': -260, 'textZoom': 70, 'url': f'http://127.0.0.1:8901/webv/妹子.html'}),
+            self._vod('裤佬音乐', {'actionId': 'OPEN_URL', 'type': 'browser', 'title': 'browser', "style": "fullscreen", 'height': -260, 'textZoom': 70, 'url': f'http://127.0.0.1:8901/webv/裤佬音乐.html'}),
             self._vod('P短视频', {'actionId': 'OPEN_URL', 'type': 'browser', 'title': 'browser', "style": "fullscreen", 'height': -260, 'textZoom': 70, 'url': 'https://cn.pornhub.com/shorties/ph61311f5650048'}),
             self._vod('红短视频', {'actionId': 'OPEN_URL', 'type': 'browser', 'title': 'browser', "style": "fullscreen", 'height': -260, 'textZoom': 70, 'url': 'https://www.redgifs.com/'}),
-            self._vod('💢直播', {'actionId': 'OPEN_URL', 'type': 'browser', 'title': 'browser', "style": "fullscreen", 'height': -260, 'textZoom': 70, 'url': f'http://localhost:{self.port}/html/index.html'}),
+            self._vod('💢直播', {'actionId': 'OPEN_URL', 'type': 'browser', 'title': 'browser', "style": "fullscreen", 'height': -260, 'textZoom': 70, 'url': f'http://127.0.0.1:8901/webv/index.html'}),
             self._vod('油管短视频', {'actionId': 'OPEN_URL', 'type': 'browser', 'title': 'browser', "style": "fullscreen", 'height': -260, 'textZoom': 70, 'url': 'https://www.youtube.com/shorts'}),
-            self._vod('网页小游戏', {'actionId': 'OPEN_URL', 'type': 'browser', 'title': 'browser', "style": "fullscreen", 'height': -260, 'textZoom': 70, 'url': 'https://www.yikm.net/nes?tag=9'}),
+            self._vod('ebo seks', {'actionId': 'OPEN_URL', 'type': 'browser', 'title': 'browser',
+                                  'height': -260, 'textZoom': 70, 'url': 'https://eboseks.one/cat/18-let/'}),
+           self._vod('missav', {'actionId': 'OPEN_URL', 'type': 'browser', 'title': 'browser',
+                      'height': -260, 'textZoom': 70, 'url': 'https://missav.ai/dm265'}),
+         self._vod('jable', {'actionId': 'OPEN_URL', 'type': 'browser', 'title': 'browser',
+                      'height': -260, 'textZoom': 70, 'url': 'https://jable.tv/latest-updates/?lang=en'}),
+         self._vod('Anysex', {'actionId': 'OPEN_URL', 'type': 'browser', 'title': 'browser',
+                                  'height': -260, 'textZoom': 70, 'url': 'https://theporndude.com/zh/shorties/ph61311f5650048'}),
+         self._vod('Xvdes', {'actionId': 'OPEN_URL', 'type': 'browser', 'title': 'browser',
+                                  'height': -260, 'textZoom': 70, 'url': 'https://www.xvideos.com/shorties/ph61311f5650048'}),
+         self._vod('XNXX', {'actionId': 'OPEN_URL', 'type': 'browser', 'title': 'browser',
+                                  'height': -260, 'textZoom': 70, 'url': 'https://m.drtuber.com/##1/shorties/ph61311f5650048'}),
+         self._vod('网页小游戏', {'actionId': 'OPEN_URL', 'type': 'browser', 'title': 'browser', "style": "fullscreen", 'height': -260, 'textZoom': 70, 'url': 'https://www.yikm.net/nes?tag=9'}),
         ]
 
     @staticmethod
