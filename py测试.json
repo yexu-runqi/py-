@@ -13,6 +13,13 @@
             "api": "./py/金牌.py"
         },
         {
+      "key": "博看听书[听]",
+      "name": "博看听书[听]",
+      "type": 3,
+      "api": "./js/drpy2.min.js",
+      "ext": "./js/博看听书[听].js"
+    },
+        {
             "key": "QQ音乐[听]",
             "name": "QQ音乐[听]",
             "type": 3,
@@ -227,12 +234,6 @@
             "name": "小说",
             "type": 3,
             "api": "./py/小说.py"
-        },
-        {
-            "key": "TG视频",
-            "name": "TG视频",
-            "type": 3,
-            "api": "./py/TG视频.py"
         },
         {
             "key": "百合影院",
