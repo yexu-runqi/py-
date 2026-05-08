@@ -19,16 +19,6 @@
             "api": "./py/4webview.py"
         },
         {
-            "key": "企鹅体育",
-            "name": "企鹅体育",
-            "type": 3,
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "order_num": 0,
-            "api": "./py/企鹅体育.py"
-        },
-        {
             "key": "腾讯体育",
             "name": "腾讯体育",
             "type": 3,

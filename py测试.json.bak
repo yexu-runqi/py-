@@ -13,10 +13,10 @@
             "api": "./py/资源管理.py"
         },
                {
-            "key": "资源管理",
-            "name": "资源管理",
+            "key": "4webview",
+            "name": "4webview",
             "type": 3,
-            "api": "./py/资源管理.py"
+            "api": "./py/4webview.py"
         },
         {
             "key": "企鹅体育",
