@@ -85,7 +85,7 @@
             "api": "csp_Guazi",
             "searchable": 1,
             "changeable": 1,
-            "ext": ""
+            "ext": "./json/guazi.json"
         },
         {
       "key": "tiny",
