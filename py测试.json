@@ -1,16 +1,109 @@
 {
     "sites": [
         {
-            "key": "听歌⊕直播2",
-            "name": "听歌⊕直播2",
+            "key": "catvod_果果官",
+            "name": "果果[官](cat)",
             "type": 3,
-            "api": "./py/听歌⊕直播2.py"
+            "api": "./catvod/果果[官].js",
+            "searchable": 1,
+            "filterable": 0,
+            "quickSearch": 1,
+            "title": "果果[官]",
+            "类型": "影视",
+            "lang": "cat",
+            "ext": ""
         },
         {
-            "key": "金牌",
-            "name": "金牌",
+            "key": "catvod_酷酷官",
+            "name": "酷酷[官](cat)",
             "type": 3,
-            "api": "./py/金牌.py"
+            "api": "./catvod/酷酷[官].js",
+            "searchable": 1,
+            "filterable": 0,
+            "quickSearch": 1,
+            "title": "酷酷[官]",
+            "类型": "影视",
+            "lang": "cat",
+            "ext": ""
+        },
+        {
+            "key": "catvod_奇奇官",
+            "name": "奇奇[官](cat)",
+            "type": 3,
+            "api": "./catvod/奇奇[官].js",
+            "searchable": 1,
+            "filterable": 0,
+            "quickSearch": 1,
+            "title": "奇奇[官]",
+            "类型": "影视",
+            "lang": "cat",
+            "ext": ""
+        },
+        {
+            "key": "catvod_腾腾官",
+            "name": "腾腾[官](cat)",
+            "type": 3,
+            "api": "./catvod/腾腾[官].js",
+            "searchable": 1,
+            "filterable": 0,
+            "quickSearch": 1,
+            "title": "腾腾[官]",
+            "类型": "影视",
+            "lang": "cat",
+            "ext": ""
+        },
+        {
+            "key": "catvod_央央官",
+            "name": "央央[官](cat)",
+            "type": 3,
+            "api": "./catvod/央央[官].js",
+            "searchable": 1,
+            "filterable": 0,
+            "quickSearch": 1,
+            "title": "央央[官]",
+            "类型": "影视",
+            "lang": "cat",
+            "ext": ""
+        },
+        {
+            "key": "catvod_哔哩cat",
+            "name": "哔哩(cat)",
+            "type": 3,
+            "api": "./catvod/哔哩cat.js",
+            "searchable": 1,
+            "filterable": 0,
+            "quickSearch": 1,
+            "title": "哔哩cat",
+            "类型": "影视",
+            "lang": "cat",
+            "ext": ""
+        },
+         { "key": "瓜子影视",
+            "name": "🍣瓜子备用 🍥知夏🍥",
+            "type": 3,
+            "jar": "https://v6.gh-proxy.org/https://raw.githubusercontent.com/chitue/dongliTV/refs/heads/main/jar/dongli-spider.jar;md5;a857d2c26e967488b422d536d145fe1f",
+            "api": "csp_Guazi",
+            "searchable": 1,
+            "changeable": 1,
+            "ext": "./json/guazi.json"
+        },
+        {
+      "key": "tiny",
+      "name": "🌾tiny[听]",
+      "type": 3,
+      "api": "./py/tiny.py"
+         },
+         {
+      "key": "网易云音乐[听]",
+      "name": "🌾网易云音乐[听]",
+      "type": 3,
+      "api": "./py/网易云音乐[听].py"
+         },
+        {
+      "key": "4kmb",
+      "name": "🌾4kmb",
+      "type": 3,
+      "api": "./py/4kmb.py"
         },
         {
             "key": "博看听书[听]",
@@ -20,19 +113,44 @@
             "ext": "./js/博看听书[听].js"
         },
         {
-      "key": "看看",
-      "name": "看看",
-      "type": 3,
-      "api": "csp_XBPQ",
-      "jar": "./jar/Lgexbpq.jar",
-      "ext": "./json/看看.json"
-    },
+            "key": "catvod_百度短剧[短]",
+            "name": "百度短剧[短](cat)",
+            "type": 3,
+            "api": "./js/百度短剧[短].js",
+            "searchable": 1,
+            "filterable": 0,
+            "quickSearch": 1,
+            "title": "百度短剧[短]",
+            "lang": "cat",
+            "ext": ""
+        },
         {
-      "key": "919体育直播",
-      "name": "919体育直播",
-      "type": 3,
-      "api": "./py/919体育直播.py"
-    },
+            "key": "drpyS_七味[优]",
+            "name": "七味[优](DS)",
+            "type": 4,
+            "api": "./ds/七味[优]",
+            "searchable": 2,
+            "filterable": 1,
+            "quickSearch": 0,
+            "title": "七味[优]",
+            "类型": "影视",
+            "lang": "ds",
+            "ext": ""
+        },
+        {
+            "key": "看看",
+            "name": "看看",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "jar": "./jar/Lgexbpq.jar",
+            "ext": "./json/看看.json"
+        },
+        {
+            "key": "919体育直播",
+            "name": "919体育直播",
+            "type": 3,
+            "api": "./py/919体育直播.py"
+        },
         {
             "key": "QQ音乐[听]",
             "name": "QQ音乐[听]",
@@ -315,7 +433,7 @@
                 "编码": "UTF-8",
                 "请求头": "User-Agent$MOBILE_UA",
                 "首页": "0",
-                "分类url": "https://hanime1.me/search?{cateId}&page={catePg}",
+                "分类url": "shturl.cc/IRJvrrm0MNJRNh9?{cateId}&page={catePg}",
                 "分类": "最新上市$sort=最新上市#最新上傳$sort=最新上傳#泡麵番$genre=泡麵番#裏番$genre=裏番#角色扮演$genre=Cosplay#2D動畫$genre=2D動畫#Motion$genre=Motion+Anime#3DCG$genre=3DCG#AI生成$genre=AI生成#MMD$genre=MMD#2.5D动画$genre=2.5D",
                 "数组": "p:div.home-rows-videos-wrapper > a||p:div > .video-item-container",
                 "图片": "src=\"&&\"",
@@ -457,7 +575,7 @@
                 "副标题": "text-white\">&&<",
                 "链接": "/frames/+/&&\"",
                 "简介": "description\" content=\"&&\"",
-                "分类url": "https://whos.tv/frames/type-{cateId}/page-{catePg}",
+                "分类url": "shturl.cc/PqgfyHGEBRUBIAJNYJ{cateId}/page-{catePg}",
                 "线路数组": "<span class=\"text-primary font-bold text-base group-hover:underline\">&&</span>",
                 "线路标题": "✨乐哥最爱",
                 "播放数组": "class=\"mt-3 flex gap-2&&</div>",
@@ -493,7 +611,7 @@
             "filterable": 1,
             "searchable": 1,
             "quickSearch": 1,
-            "ext": "分类url:https://www.zqzdzj.com/vodtype/{cateId}/area/{area}/by/{by}/class/{class}/page/{catePg}/year/{year}.html,分类:电影$1#电视剧$2#综艺$3#动漫$4"
+            "ext": "分类url:shturl.cc/mal4i2lsOQBlQUSz4sEPg{cateId}/area/{area}/by/{by}/class/{class}/page/{catePg}/year/{year}.html,分类:电影$1#电视剧$2#综艺$3#动漫$4"
         },
         {
             "key": "csp_AppSymx",
@@ -559,8 +677,8 @@
                 "站名": "蘑菇视频",
                 "发布页": "",
                 "防丢url": "",
-                "主页url": "https://www.mogu2026.net",
-                "分类url": "https://www.mogu2026.net/category/cate{cateId}/{catePg}/",
+                "主页url": "shturl.cc/vHx2x9ItojBTLS",
+                "分类url": "shturl.cc/vHx2x9ItojBTLS/category/cate{cateId}/{catePg}/",
                 "分类数组": "<a&&/a>",
                 "分类标题": ">&&<",
                 "分类ID": "/category/cate&&/",
@@ -576,7 +694,7 @@
                 "播放链接": "https://diik3zzrxh4hj.cloudfront.net+\"&&\"",
                 "简介": "【友情提醒：请不要相信视频中的广告，以免上当受骗！】",
                 "搜索模式": "1",
-                "搜索url": "https://www.mogu2026.net/search/{wd}/{pg}/"
+                "搜索url": "shturl.cc/vHx2x9ItojBTLS/search/{wd}/{pg}/"
             }
         },
         {
@@ -591,7 +709,7 @@
             "ext": {
                 "请求头": "User-Agent@Mozilla/5.0 (Linux；； Android 14；； V2136A Build/UP1A.231005.007；； wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/145.0.7632.159 Mobile Safari/537.36#Cookie$df_iscookie=1；； UserID=19238345a0f23b4cc1ad6c2a96cd1205:1774080379",
                 "编码": "UTF-8",
-                "主页url": "https://cyhm.nmsss.top/",
+                "主页url": "shturl.cc/4PUb1dMIFzD9W",
                 "直接播放": "1",
                 "二次截取": "data*list\":\\[&&\\]",
                 "数组": "{&&}",
@@ -599,7 +717,7 @@
                 "图片": "https://wdeab01.com+src\":\"&&\"",
                 "链接": "/play/+id\":&&,+.html",
                 "简介": "【请不要相信视频中的广告，以免上当受骗！】",
-                "分类url": "https://cyhm.nmsss.top/type/{cateId}-{catePg}.html",
+                "分类url": "shturl.cc/4PUb1dMIFzD9Wtype/{cateId}-{catePg}.html",
                 "分类二次截取": "list\":\\[&&\\]",
                 "分类数组": "{&&}",
                 "分类标题": "name\":\"&&\"",
@@ -619,13 +737,13 @@
                 "作者": "暗黑乐哥",
                 "请求头": "User-Agent$MOBILE_UA",
                 "编码": "UTF-8",
-                "主页url": "https://www.lookphe.com/zh/threesome/",
+                "主页url": "shturl.cc/GwfKSPT5HGHvK6ta2threesome/",
                 "直接播放": "1",
                 "数组": "iet>&&</a>",
                 "标题": "ztz>&&</div",
                 "图片": "http:+data-src=\"&&\"",
                 "链接": "href='&&'",
-                "分类url": "https://www.lookphe.com/zh/{cateId}/?page={catePg}",
+                "分类url": "shturl.cc/GwfKSPT5HGHvK6ta2{cateId}/?page={catePg}",
                 "分类数组": "<a&&/a>",
                 "分类标题": "<p>&&<",
                 "分类ID": "/zh/&&/"
@@ -670,75 +788,145 @@
             }
         },
         {
-            "key": "菜佬湿",
-            "name": "菜佬湿",
-            "type": 3,
-            "api": "csp_XBPQ",
-            "jar": "./jar/新XBPQ.jar",
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "ext": {
-                "作者": "菜佬湿",
-                "请求头": "User-Agent$MOBILE_UA",
-                "编码": "UTF-8",
-                "站名": "啪啪视频",
-                "发布页": "",
-                "防丢url": "",
-                "主页url": "http://202601.duduo.vip/6/",
-                "二次截取": "",
-                "数组": "lazyload&&</li>",
-                "链接": "href=\"&&\"",
-                "直接播放": "1",
-                "标题": "title=\"&&\"",
-                "图片": "data-original=\"&&\"",
-                "副标题": "🔞才是源动力",
-                "简介": "菜佬湿📢:本资源来源于网络🚓侵权请联系删除🔞🔞🔞+<title>&&- PaPa视频-744TV.COM</title>",
-                "搜索模式": "1",
-                "搜索url": "http://202601.duduo.vip/6/index.php/vod/search/page/{pg}/wd/{wd}.html",
-                "分类url": "http://202601.duduo.vip/6/index.php/vod/type/id/{cateId}/page/{catePg}.html",
-                "分类": "国产$20#无码$21#字幕$22#欧美$23#三级$24#动漫$25#国产四虎$26#国产辣椒$32#国产仓库$40#"
-            }
-        },
-        {
-            "key": "无码片源",
-            "name": "无码片源",
-            "type": 3,
-            "api": "csp_XBPQ",
-            "jar": "./jar/新XBPQ.jar",
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "ext": {
-                "请求头": "User-Agent$MOBILE_UA",
-                "编码": "UTF-8",
-                "搜索模式": "1",
-                "搜索url": "https://123.wumahl4.icu/pian/index.php/vod/search/page/{pg}/wd/{wd}.html",
-                "分类url": "https://123.wumahl4.icu/pian/index.php/vod/type/id/{cateId}/page/{catePg}.html;;z",
-                "分类": "日韩专区$245#独家调教$271#制服极品$270#人妻极品$269#强奸极品$268#乱伦极品$267#极品学妹$266#约炮探花$265#国产乱伦$237#传媒视频$236#精品动漫$246#国产视频$234#性感主播$238#伦理三级$239#强奸乱伦$253#明星淫梦$244#VR专区$242#无码专区$241#中文字幕$240#网曝门事件$249#欧美专区$248#AV解说$247#女同专区$259#SM专区$258#家庭伦伦$257#侵犯专区$256#明星换脸$254#"
-            }
-        },
-        {
-            "key": "OXOX",
-            "name": "OXOX",
-            "type": 3,
-            "api": "csp_XBPQ",
-            "jar": "./jar/新XBPQ.jar",
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "ext": {
-                "请求头": "User-Agent$MOBILE_UA",
-                "编码": "UTF-8",
-                "分类url": "https://www.oxoxvideos2.top/video/category/{cateId}?page={catePg};;z",
-                "分类": "美女主播1$美女主播1#日本无码1$日本无码1#国产自拍1$国产自拍1#国产乱伦$国产乱伦#国产主播$国产主播#无码流出$无码流出#自拍偷拍$自拍偷拍#主奴调教$主奴调教#乱伦调教$乱伦调教#网曝事件$网曝事件#人妻素人$人妻素人#清纯学生$清纯学生#传媒探花$传媒探花#野外露出$野外露出#港台辣妹$港台辣妹#足浴撩妹$足浴撩妹#a i 换脸$a i 换脸#人妻熟女$人妻熟女#丝袜美腿$丝袜美腿#多人群交$多人群交#重口性癖$重口性癖#制服丝袜$制服丝袜#角色剧情$角色剧情#欧美激情$欧美激情#制服诱惑$制服诱惑#精品推荐$精品推荐#中文字幕$中文字幕#凌辱快感$凌辱快感#变性伪娘$变性伪娘#反差母狗$反差母狗#女同性恋$女同性恋#韩国三级$韩国三级#白嫩少女$白嫩少女#黑丝美腿$黑丝美腿#粉嫩小穴$粉嫩小穴#白虎嫩妹$白虎嫩妹#连续高潮$连续高潮#敏感$敏感#自慰喷水$自慰喷水#极品少妇$极品少妇#中学生$中学生#清纯可爱$清纯可爱#极品长腿$极品长腿#小萝莉$小萝莉#痉挛$痉挛#淫水流出$淫水流出#丝袜高跟$丝袜高跟#自慰高潮$自慰高潮#校花自慰$校花自慰#学生嫩妹$学生嫩妹#一线天$一线天#超级粉嫩$超级粉嫩#清纯小妹$清纯小妹#极品推荐$极品推荐#"
-            }
-        },
-        {
             "key": "麻豆传媒",
             "name": "麻豆传媒",
             "type": 3,
             "api": "./py/麻豆传媒.py"
+        }
+    ],
+    "parses": [
+        {
+            "name": "解析接口1",
+            "type": 0,
+            "url": "https://jiexi.789jiexi.com/?url="
+        },
+        {
+            "name": "夏夜解析",
+            "url": "http://xy.183933.xyz/xiayede.php?key=554711066&url=",
+            "type": 1,
+            "ext": {
+                "flag": [
+                    "qiyi",
+                    "imgo",
+                    "爱奇艺",
+                    "奇艺",
+                    "qq",
+                    "qq 预告及花絮",
+                    "腾讯",
+                    "youku",
+                    "优酷",
+                    "pptv",
+                    "PPTV",
+                    "letv",
+                    "乐视",
+                    "leshi",
+                    "mgtv",
+                    "芒果",
+                    "sohu",
+                    "xigua",
+                    "fun",
+                    "风行"
+                ]
+            },
+            "header": {
+                "User-Agent": "Mozilla/5.0"
+            }
+        },
+        {
+            "name": "豆丁",
+            "url": "http://121.40.174.45:299/api/?key=47BEA74D988B08Q&url=",
+            "type": 1,
+            "ext": {
+                "flag": [
+                    "qiyi",
+                    "imgo",
+                    "爱奇艺",
+                    "奇艺",
+                    "qq",
+                    "qq 预告及花絮",
+                    "腾讯",
+                    "youku",
+                    "优酷",
+                    "pptv",
+                    "PPTV",
+                    "letv",
+                    "乐视",
+                    "leshi",
+                    "mgtv",
+                    "芒果",
+                    "sohu",
+                    "xigua",
+                    "fun",
+                    "风行"
+                ]
+            },
+            "header": {
+                "User-Agent": "Mozilla/5.0"
+            }
+        },
+        {
+            "name": "4K解析2",
+            "url": "http://114.66.51.127:777/shanshan/Destin/sj.php?url=",
+            "type": 0,
+            "ext": {
+                "flag": [
+                    "qiyi",
+                    "imgo",
+                    "爱奇艺",
+                    "奇艺",
+                    "qq",
+                    "qq 预告及花絮",
+                    "腾讯",
+                    "youku",
+                    "优酷",
+                    "pptv",
+                    "PPTV",
+                    "letv",
+                    "乐视",
+                    "leshi",
+                    "mgtv",
+                    "芒果",
+                    "sohu",
+                    "xigua",
+                    "fun",
+                    "风行"
+                ]
+            },
+            "header": {
+                "User-Agent": "Mozilla/5.0"
+            }
+        },
+        {
+            "name": "4K解析",
+            "url": "http://103.163.47.120:7777/api/?key=RE2fdKLrw784d92a01&url=",
+            "type": 1,
+            "ext": {
+                "flag": [
+                    "qiyi",
+                    "imgo",
+                    "爱奇艺",
+                    "奇艺",
+                    "qq",
+                    "qq 预告及花絮",
+                    "腾讯",
+                    "youku",
+                    "优酷",
+                    "pptv",
+                    "PPTV",
+                    "letv",
+                    "乐视",
+                    "leshi",
+                    "mgtv",
+                    "芒果",
+                    "sohu",
+                    "xigua",
+                    "fun",
+                    "风行"
+                ]
+            },
+            "header": {
+                "User-Agent": "Mozilla/5.0"
+            }
         }
     ]
 }
